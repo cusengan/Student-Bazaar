@@ -11,49 +11,42 @@ import android.widget.Button;
 import com.example.william.studentbazaar.R;
 
 /**
- * Created by Yenpham on 11/9/16.
+ * Created by William on 4/13/18.
  */
 
 public class Introduction extends AppCompatActivity {
 
-    public Button exist;
-    public Button newUser;
+    public Button login;
+    public Button register;
 //    public UBSdb db;
 //    SharePref sharePref;
-//    public void login(){
-//        exist = (Button)findViewById(R.id.existing);
-//        exist.setOnClickListener( new View.OnClickListener(){
-//            @Override
-//            public void onClick(View v) {
-//                Intent gglog= new Intent(welcom_class.this, login_gg.class);
-//                gglog.putExtra("IS_First_Time",false);
-//                startActivity(gglog);
-//            }
-//
-//        });
-//
-//    }
-//    public void registration (){
-//        newUser = (Button)findViewById(R.id.newUser);
-//        newUser.setOnClickListener( new View.OnClickListener(){
-//            @Override
-//            public void onClick(View v) {
-//                Intent reg= new Intent(welcom_class.this, firstTimeLogin.class);
-//                startActivity(reg);
-//
-//            }
-//
-//        });
-//    }
-
     @Override
     protected void onCreate (Bundle savedInstanceState ){
         setTheme(R.style.AppTheme);
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.welcome);
-//        login();
-//        registration ();
+        login = (Button)findViewById(R.id.login);
+        login.setOnClickListener( new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent intent= new Intent(Introduction.this, MainScreen.class);
+//                intent.putExtra("IS_First_Time",false);
+                startActivity(intent);
+            }
+
+        });
+
+        register = (Button)findViewById(R.id.register);
+        register.setOnClickListener( new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent intent= new Intent(Introduction.this, MainScreen.class);
+                startActivity(intent);
+
+            }
+
+        });
     }
 
 
