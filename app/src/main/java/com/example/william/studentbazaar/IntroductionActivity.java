@@ -10,7 +10,7 @@ import android.widget.Button;
  * Created by William on 4/13/18.
  */
 
-public class Introduction extends AppCompatActivity {
+public class IntroductionActivity extends AppCompatActivity {
 
     public Button login;
     public Button register;
@@ -18,26 +18,25 @@ public class Introduction extends AppCompatActivity {
 //    SharePref sharePref;
     @Override
     protected void onCreate (Bundle savedInstanceState ){
-//        setTheme(R.style.AppTheme);
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.introduction);
-        login = (Button)findViewById(R.id.login);
+        login = (Button)findViewById(R.id.login_button);
         login.setOnClickListener( new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                Intent intent= new Intent(Introduction.this, MainScreen.class);
+                Intent intent= new Intent(IntroductionActivity.this, MainScreenActivity.class);
 //                intent.putExtra("IS_First_Time",false);
                 startActivity(intent);
             }
 
         });
 
-        register = (Button)findViewById(R.id.register);
+        register = (Button)findViewById(R.id.register_button);
         register.setOnClickListener( new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                Intent intent= new Intent(Introduction.this, MainScreen.class);
+                Intent intent= new Intent(IntroductionActivity.this, MainScreenActivity.class);
                 startActivity(intent);
 
             }

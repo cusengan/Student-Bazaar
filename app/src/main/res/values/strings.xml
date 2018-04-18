@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">University Bazaar System</string>
+    <string name="title_activity_create_club">CreateClubActivity</string>
 </resources>
