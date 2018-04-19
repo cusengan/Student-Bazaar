@@ -8,6 +8,7 @@ public class Club {
 
     private UUID mId;
     private String mName;
+    private String mDescription;
 
 
     public Club() {
@@ -22,12 +23,20 @@ public class Club {
         return mId;
     }
 
-    public String getTitle() {
+    public String getName() {
         return mName;
     }
 
-    public void setName(String mName) {
-        this.mName = mName;
+    public void setName(String name) {
+        mName = name;
+    }
+
+    public String getDescription() {
+        return mDescription;
+    }
+
+    public void setDescription(String description) {
+        this.mDescription = description;
     }
 
 }

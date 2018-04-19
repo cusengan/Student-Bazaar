@@ -1,6 +1,5 @@
 package com.example.william.studentbazaar;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -15,7 +14,7 @@ public class CreateClubActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.create_club);
+        setContentView(R.layout.activity_create_club);
         mCreateClubButton = (Button) findViewById(R.id.create_club_button);
         final EditText createClubInput = (EditText)findViewById(R.id.create_club_edit_text);
 

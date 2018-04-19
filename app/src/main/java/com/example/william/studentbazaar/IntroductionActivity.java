@@ -20,7 +20,7 @@ public class IntroductionActivity extends AppCompatActivity {
     protected void onCreate (Bundle savedInstanceState ){
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.introduction);
+        setContentView(R.layout.activity_introduction);
         login = (Button)findViewById(R.id.login_button);
         login.setOnClickListener( new View.OnClickListener(){
             @Override

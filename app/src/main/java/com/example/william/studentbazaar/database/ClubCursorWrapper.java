@@ -11,18 +11,20 @@ import java.util.UUID;
 
 import static com.example.william.studentbazaar.database.StudentBazaarDbSchema.ClubTable.*;
 
-public class ClubWrapper extends CursorWrapper {
+public class ClubCursorWrapper extends CursorWrapper {
 
-    public ClubWrapper(Cursor cursor) {
+    public ClubCursorWrapper(Cursor cursor) {
         super(cursor);
     }
 
     public Club getClub() {
         String uuidString = getString(getColumnIndex(Cols.UUID));
         String name = getString(getColumnIndex(Cols.NAME));
+        String description = getString(getColumnIndex(Cols.DESCRIPTION));
 
         Club club = new Club(UUID.fromString(uuidString));
         club.setName(name);
+        club.setDescription(description);
 
         return club;
     }

@@ -7,11 +7,11 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import com.example.william.studentbazaar.database.StudentBazaarDbSchema.ClubTable;
 
-public class DbHelper extends SQLiteOpenHelper {
+public class ClubHelper extends SQLiteOpenHelper {
     private static final int VERSION = 1;
     private static final String DATABASE_NAME = "studentBazaar.db";
 
-    public DbHelper(Context context) {
+    public ClubHelper(Context context) {
         super(context, DATABASE_NAME, null, VERSION);
     }
 
@@ -20,7 +20,8 @@ public class DbHelper extends SQLiteOpenHelper {
         db.execSQL("create table " + ClubTable.NAME + "(" +
                 " _id integer primary key autoincrement, " +
                 ClubTable.Cols.UUID + ", " +
-                ClubTable.Cols.NAME +
+                ClubTable.Cols.NAME + ", " +
+                ClubTable.Cols.DESCRIPTION +
                 ")"
         );
     }

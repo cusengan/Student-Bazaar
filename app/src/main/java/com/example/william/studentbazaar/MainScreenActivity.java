@@ -24,7 +24,7 @@ public class MainScreenActivity extends AppCompatActivity  {
 
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.main_screen);
+        setContentView(R.layout.activity_main_screen);
         Bundle intent = getIntent().getExtras();
 
         mFormClub = (Button)findViewById(R.id.form_club_button);
@@ -32,7 +32,7 @@ public class MainScreenActivity extends AppCompatActivity  {
         mFormClub.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent= new Intent(MainScreenActivity.this, CreateClubActivity.class);
+                Intent intent= new Intent(MainScreenActivity.this, ClubMainActivity.class);
 //                intent.putExtra("IS_First_Time",false);
                 startActivity(intent);
             }
