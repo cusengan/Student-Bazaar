@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import com.example.william.studentbazaar.ClubDirectory.ClubMainActivity;
+
 
 /**
  * Created by William Truong on 4/13/18.

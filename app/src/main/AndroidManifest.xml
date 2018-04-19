@@ -19,10 +19,12 @@
         <activity
             android:name=".MainScreenActivity"
             android:label="Main" />
-        <activity android:name=".CreateClubActivity" />
-        <activity android:name=".ClubMainActivity" />
+        <activity android:name=".ClubDirectory.CreateClubActivity" />
+        <activity android:name=".ClubDirectory.ClubMainActivity" />
         <activity android:name=".database.DisplayClubsActivity" />
-        <activity android:name=".ClubListActivity"></activity>
+        <activity android:name=".ClubDirectory.ClubListActivity" />
+        <activity android:name=".ClubDirectory.ClubPagerActivity" />
+        <activity android:name=".ClubDirectory.ClubFragment"></activity>
     </application>
 
 </manifest>

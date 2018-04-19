@@ -3,10 +3,8 @@ package com.example.william.studentbazaar.database;
 import android.database.Cursor;
 import android.database.CursorWrapper;
 
-import com.example.william.studentbazaar.Club;
-import com.example.william.studentbazaar.database.StudentBazaarDbSchema.ClubTable;
+import com.example.william.studentbazaar.ClubDirectory.Club;
 
-import java.util.Date;
 import java.util.UUID;
 
 import static com.example.william.studentbazaar.database.StudentBazaarDbSchema.ClubTable.*;

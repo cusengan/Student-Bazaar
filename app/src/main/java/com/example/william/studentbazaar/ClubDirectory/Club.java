@@ -1,4 +1,4 @@
-package com.example.william.studentbazaar;
+package com.example.william.studentbazaar.ClubDirectory;
 
 
 import java.util.Date;
