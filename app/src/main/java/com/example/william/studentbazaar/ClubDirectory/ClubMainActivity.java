@@ -18,7 +18,7 @@ public class ClubMainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_club_main);
 
-        mGetClubs = (Button)findViewById(R.id.list_clubs_button);
+        mGetClubs = findViewById(R.id.list_clubs_button);
 
         mGetClubs.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -28,12 +28,12 @@ public class ClubMainActivity extends AppCompatActivity {
             }
         });
 
-        mFormClubs = (Button)findViewById(R.id.create_club_button);
+        mFormClubs = findViewById(R.id.create_club_button);
 
         mFormClubs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent= new Intent(ClubMainActivity.this, ClubMainActivity.class);
+                Intent intent= new Intent(ClubMainActivity.this, CreateClubActivity.class);
                 startActivity(intent);
             }
         });

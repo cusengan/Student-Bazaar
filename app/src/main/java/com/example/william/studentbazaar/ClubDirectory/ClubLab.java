@@ -36,7 +36,7 @@ public class ClubLab {
 
     }
 
-    public void addCrime(Club c) {
+    public void addClub(Club c) {
         ContentValues values = getContentValues(c);
         mDatabase.insert(ClubTable.NAME, null, values);
     }

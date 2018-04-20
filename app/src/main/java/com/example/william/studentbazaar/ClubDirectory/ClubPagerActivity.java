@@ -36,7 +36,7 @@ public class ClubPagerActivity extends AppCompatActivity {
         UUID crimeId = (UUID) getIntent()
                 .getSerializableExtra(EXTRA_CRIME_ID);
 
-        mViewPager = (ViewPager) findViewById(R.id.crime_view_pager);
+        mViewPager = findViewById(R.id.crime_view_pager);
 
         mClubs = ClubLab.get(this).getClubs();
         FragmentManager fragmentManager = getSupportFragmentManager();
@@ -44,8 +44,8 @@ public class ClubPagerActivity extends AppCompatActivity {
 
             @Override
             public Fragment getItem(int position) {
-                Club crime = mClubs.get(position);
-                return ClubFragment.newInstance(crime.getId());
+                Club club = mClubs.get(position);
+                return ClubFragment.newInstance(club.getId());
             }
 
             @Override

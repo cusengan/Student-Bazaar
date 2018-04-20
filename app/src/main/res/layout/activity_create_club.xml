@@ -25,21 +25,14 @@
         android:text="Enter a club name"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
-    <Button
-        android:id="@+id/submit_club_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="94dp"
-        android:text="Form" />
 
     <EditText
         android:id="@+id/create_club_edit_text"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_above="@+id/create_club_button"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="211dp" />
 
     <TextView
         android:id="@+id/club_description_text_view"
@@ -55,7 +48,15 @@
         android:id="@+id/club_description_edit_text"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="211dp" />
+        android:layout_above="@+id/submit_club_button"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:id="@+id/submit_club_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="94dp"
+        android:text="Form" />
 </RelativeLayout>

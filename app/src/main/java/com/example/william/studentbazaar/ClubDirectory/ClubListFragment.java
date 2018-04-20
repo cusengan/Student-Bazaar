@@ -24,8 +24,7 @@ public class ClubListFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_club_list, container, false);
 
-        mCrimeRecyclerView = (RecyclerView) view
-                .findViewById(R.id.club_recycler_view);
+        mCrimeRecyclerView = view.findViewById(R.id.club_recycler_view);
         mCrimeRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
         updateUI();
@@ -57,21 +56,21 @@ public class ClubListFragment extends Fragment {
 
         private Club mClub;
 
-        private TextView mTitleTextView;
-        private TextView mDateTextView;
+        private TextView mNameTextView;
+        private TextView mDescriptionTextView;
 
         public ClubHolder(LayoutInflater inflater, ViewGroup parent) {
             super(inflater.inflate(R.layout.list_item_club, parent, false));
             itemView.setOnClickListener(this);
 
-            mTitleTextView = (TextView) itemView.findViewById(R.id.club_name);
-            mDateTextView = (TextView) itemView.findViewById(R.id.club_description);
+            mNameTextView = itemView.findViewById(R.id.club_name);
+            mDescriptionTextView =  itemView.findViewById(R.id.club_description);
         }
 
         public void bind(Club club) {
             mClub = club;
-            mTitleTextView.setText(mClub.getName());
-            mDateTextView.setText(mClub.getDescription());
+            mNameTextView.setText(mClub.getName());
+            mDescriptionTextView.setText(mClub.getDescription());
         }
 
         @Override
