@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_screen"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/bazaar"
+        android:layout_width="179dp"
+        android:layout_height="146dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/uta" />
+
+    <TextView
+        android:id="@+id/register_item_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="176dp"
+        android:text="Register item to"
+        android:textColor="@android:color/black"
+        android:textSize="36sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/sell_button"
+        android:layout_width="97dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="240dp"
+        android:background="@drawable/buttondefault"
+        android:backgroundTint="@color/colorHomeTextViewColor"
+        android:text="SELL"
+        android:textColor="@color/colorWhite"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/trade_button"
+        android:layout_width="118dp"
+        android:layout_height="69dp"
+        android:layout_marginEnd="76dp"
+        android:layout_marginTop="240dp"
+        android:background="@drawable/buttondefault"
+        android:backgroundTint="@color/colorPrimary"
+        android:text="TRADE"
+        android:textColor="@color/colorWhite"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/see_items_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="140dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:text="See items to"
+        android:textColor="@android:color/black"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/buy_button"
+        android:layout_width="97dp"
+        android:layout_height="67dp"
+        android:layout_marginBottom="52dp"
+        android:layout_marginStart="76dp"
+        android:background="@drawable/buttondefault"
+        android:backgroundTint="@color/colorHomeTextViewColor"
+        android:text="BUY"
+        android:textColor="@color/colorWhite"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/trade2_button"
+        android:layout_width="118dp"
+        android:layout_height="67dp"
+        android:layout_marginBottom="52dp"
+        android:layout_marginEnd="76dp"
+        android:background="@drawable/buttondefault"
+        android:backgroundTint="@color/colorPrimary"
+        android:text="TRADE"
+        android:textColor="@color/colorWhite"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+</android.support.constraint.ConstraintLayout>
