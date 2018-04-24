@@ -57,7 +57,17 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:background="@drawable/buttondefault"
-                android:text="Search Items"
+                android:text="Communication"
+                android:textColor="@color/colorHomeTextViewColor"
+                android:textSize="8pt"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/bst_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/buttondefault"
+                android:text="Buy-Sell-Trade"
                 android:textColor="@color/colorHomeTextViewColor"
                 android:textSize="8pt"
                 android:textStyle="bold" />
