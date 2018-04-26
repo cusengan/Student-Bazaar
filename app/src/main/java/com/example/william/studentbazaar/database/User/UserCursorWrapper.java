@@ -15,7 +15,7 @@ public class UserCursorWrapper extends CursorWrapper {
         super(cursor);
     }
 
-    public User getClub() {
+    public User getUser() {
         String uuidString = getString(getColumnIndex(StudentBazaarDbSchema.UserTable.Cols.UUID));
         String firstName = getString(getColumnIndex(StudentBazaarDbSchema.UserTable.Cols.FIRSTNAME));
         String lastName = getString(getColumnIndex(StudentBazaarDbSchema.UserTable.Cols.LASTNAME));
