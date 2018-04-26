@@ -15,6 +15,7 @@
         android:text="Payment Details"
         android:textColor="@android:color/black"
         android:textSize="36sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/guideline"
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toTopOf="parent" />
