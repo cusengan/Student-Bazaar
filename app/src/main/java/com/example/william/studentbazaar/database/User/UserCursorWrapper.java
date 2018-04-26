@@ -22,6 +22,7 @@ public class UserCursorWrapper extends CursorWrapper {
         String studentId = getString(getColumnIndex(StudentBazaarDbSchema.UserTable.Cols.STUDENTID));
         String email = getString(getColumnIndex(StudentBazaarDbSchema.UserTable.Cols.EMAIL));
         String phoneNumber = getString(getColumnIndex(StudentBazaarDbSchema.UserTable.Cols.PHONENUMBER));
+        String password = getString(getColumnIndex(StudentBazaarDbSchema.UserTable.Cols.PASSWORD));
 
         User user = new User(UUID.fromString(uuidString));
         user.setFirstName(firstName);
@@ -29,6 +30,7 @@ public class UserCursorWrapper extends CursorWrapper {
         user.setStudentId(studentId);
         user.setEmail(email);
         user.setPhoneNumber(phoneNumber);
+        user.setPassword(password);
         
         return user;
     }

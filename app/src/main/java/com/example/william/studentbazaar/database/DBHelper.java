@@ -33,6 +33,7 @@ public class DBHelper extends SQLiteOpenHelper {
                 UserTable.Cols.LASTNAME + "NOT NULL, " +
                 UserTable.Cols.PHONENUMBER + "NOT NULL, " +
                 UserTable.Cols.EMAIL + "NOT NULL UNIQUE" +
+                UserTable.Cols.PASSWORD + "NOT NULL" +
                 ")"
         );
     }

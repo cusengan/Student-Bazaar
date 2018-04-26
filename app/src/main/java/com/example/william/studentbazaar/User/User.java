@@ -10,6 +10,7 @@ public class User {
     private String mStudentId;
     private String mPhoneNumber;
     private String mEmail;
+    private String mPassword;
 
     public User() {
         this(UUID.randomUUID());
@@ -61,5 +62,13 @@ public class User {
 
     public void setEmail(String mEmail) {
         this.mEmail = mEmail;
+    }
+
+    public void setPassword(String mPassword) {
+        this.mPassword = mPassword;
+    }
+
+    public String getPassword() {
+        return mPassword;
     }
 }

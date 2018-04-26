@@ -27,12 +27,14 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText mLastName;
     private EditText mStudentId;
     private EditText mPhoneNumber;
+    private EditText mPassword;
 
     private String email;
     private String firstName;
     private String lastName;
     private String studentId;
     private String phoneNumber;
+    private String password;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -131,6 +133,24 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
 
+        mPassword = findViewById(R.id.password);
+        mPassword.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                password = s.toString();
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
         /////////////////// BUTTON METHODS /////////////////////////
 
         mSubmitButton = findViewById(R.id.submit_register);
@@ -148,6 +168,7 @@ public class RegisterActivity extends AppCompatActivity {
                 user.setLastName(lastName);
                 user.setStudentId(studentId);
                 user.setPhoneNumber(phoneNumber);
+                user.setPassword(password);
                 UserLab.get(RegisterActivity.this).addUser(user);
 
                 Global.currentUser = user;

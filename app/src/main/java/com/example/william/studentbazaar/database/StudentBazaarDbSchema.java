@@ -22,6 +22,7 @@ public class StudentBazaarDbSchema {
             public static final String STUDENTID = "studentId";
             public static final String PHONENUMBER = "phoneNumber";
             public static final String EMAIL = "email";
+            public static final String PASSWORD ="password";
         }
     }
 
