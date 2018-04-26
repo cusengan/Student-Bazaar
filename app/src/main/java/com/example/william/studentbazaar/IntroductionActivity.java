@@ -36,7 +36,7 @@ public class IntroductionActivity extends AppCompatActivity {
         register.setOnClickListener( new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                Intent intent= new Intent(IntroductionActivity.this, MainScreenActivity.class);
+                Intent intent= new Intent(IntroductionActivity.this, RegisterActivity.class);
                 startActivity(intent);
 
             }
