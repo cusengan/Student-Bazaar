@@ -31,6 +31,7 @@ public class MainScreenActivity extends AppCompatActivity  {
         setContentView(R.layout.activity_main_screen);
         Bundle intent = getIntent().getExtras();
 
+        //testing 
 //        UserTextView = findViewById(R.id.displayUserInfo);
 //        UserTextView.setText(Global.currentUser.getPhoneNumber());
         mFormClub = findViewById(R.id.form_club_button);
