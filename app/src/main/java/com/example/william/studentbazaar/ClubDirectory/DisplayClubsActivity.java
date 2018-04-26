@@ -1,4 +1,4 @@
-package com.example.william.studentbazaar.database;
+package com.example.william.studentbazaar.ClubDirectory;
 
 import android.support.v4.app.Fragment;
 

@@ -6,8 +6,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 
-import com.example.william.studentbazaar.database.ClubHelper;
-import com.example.william.studentbazaar.database.ClubCursorWrapper;
+import com.example.william.studentbazaar.database.DBHelper;
+import com.example.william.studentbazaar.database.Club.ClubCursorWrapper;
 import com.example.william.studentbazaar.database.StudentBazaarDbSchema.ClubTable;
 import static com.example.william.studentbazaar.database.StudentBazaarDbSchema.ClubTable.Cols.*;
 
@@ -31,7 +31,7 @@ public class ClubLab {
 
     private ClubLab(Context context) {
         mContext = context.getApplicationContext();
-        mDatabase = new ClubHelper(mContext)
+        mDatabase = new DBHelper(mContext)
                 .getWritableDatabase();
 
     }

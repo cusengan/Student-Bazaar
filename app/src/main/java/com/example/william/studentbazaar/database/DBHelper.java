@@ -6,12 +6,13 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import com.example.william.studentbazaar.database.StudentBazaarDbSchema.ClubTable;
+import com.example.william.studentbazaar.database.StudentBazaarDbSchema.UserTable;
 
-public class ClubHelper extends SQLiteOpenHelper {
+public class DBHelper extends SQLiteOpenHelper {
     private static final int VERSION = 1;
     private static final String DATABASE_NAME = "studentBazaar.db";
 
-    public ClubHelper(Context context) {
+    public DBHelper(Context context) {
         super(context, DATABASE_NAME, null, VERSION);
     }
 
@@ -22,6 +23,15 @@ public class ClubHelper extends SQLiteOpenHelper {
                 ClubTable.Cols.UUID + ", " +
                 ClubTable.Cols.NAME + ", " +
                 ClubTable.Cols.DESCRIPTION +
+                ")"
+        );
+
+        db.execSQL("create table " + UserTable.NAME + "(" +
+                UserTable.Cols.STUDENTID + " INTEGER PRIMARY KEY," +
+                UserTable.Cols.UUID + ", " +
+                UserTable.Cols.FIRSTNAME + ", " +
+                UserTable.Cols.LASTNAME + ", " +
+                UserTable.Cols.PHONENUMBER +
                 ")"
         );
     }

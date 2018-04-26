@@ -1,4 +1,4 @@
-package com.example.william.studentbazaar.database;
+package com.example.william.studentbazaar.database.Club;
 
 import android.database.Cursor;
 import android.database.CursorWrapper;
