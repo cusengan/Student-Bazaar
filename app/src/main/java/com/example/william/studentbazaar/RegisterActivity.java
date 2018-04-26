@@ -8,6 +8,14 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import com.example.william.studentbazaar.ClubDirectory.Club;
+import com.example.william.studentbazaar.ClubDirectory.ClubLab;
+import com.example.william.studentbazaar.ClubDirectory.ClubListActivity;
+import com.example.william.studentbazaar.ClubDirectory.CreateClubActivity;
+import com.example.william.studentbazaar.User.User;
+import com.example.william.studentbazaar.User.UserLab;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -129,7 +137,23 @@ public class RegisterActivity extends AppCompatActivity {
         mSubmitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+//                if (mClubTitle.getText().toString().equals("")) { //check error
+//                    Toast.makeText(CreateClubActivity.this, "Please enter a valid club name" ,Toast.LENGTH_SHORT).show();
+//                    return;
+//                }
 
+                User user = new User();
+                user.setEmail(email);
+                user.setFirstName(firstName);
+                user.setLastName(lastName);
+                user.setStudentId(studentId);
+                user.setPhoneNumber(phoneNumber);
+                UserLab.get(RegisterActivity.this).addUser(user);
+
+                Global.currentUser = user;
+
+                Toast.makeText(RegisterActivity.this, "User created", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(RegisterActivity.this, MainScreenActivity.class));
             }
         });
 
@@ -137,8 +161,7 @@ public class RegisterActivity extends AppCompatActivity {
         mCancelButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(RegisterActivity.this, IntroductionActivity.class);
-                startActivity(intent);
+                finish();
             }
         });
 

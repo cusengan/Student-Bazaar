@@ -43,7 +43,7 @@ public class UserLab {
 
     public List<User> getUsers() {
         List<User> Users = new ArrayList<>();
-        UserCursorWrapper cursor = queryCrimes(null, null);
+        UserCursorWrapper cursor = queryUsers(null, null);
         try {
             cursor.moveToFirst();
             while (!cursor.isAfterLast()) {
@@ -57,7 +57,7 @@ public class UserLab {
     }
 
     public User getUser(UUID id) {
-        UserCursorWrapper cursor = queryCrimes(
+        UserCursorWrapper cursor = queryUsers(
                 UserTable.Cols.UUID + " = ?",
                 new String[]{id.toString()}
         );
@@ -73,7 +73,7 @@ public class UserLab {
     }
 
 
-    public void updateCrime(User User) {
+    public void updateUser(User User) {
         String uuidString = User.getId().toString();
         ContentValues values = getContentValues(User);
         mDatabase.update(UserTable.NAME, values,
@@ -81,7 +81,7 @@ public class UserLab {
                 new String[]{uuidString});
     }
 
-    private UserCursorWrapper queryCrimes(String whereClause, String[] whereArgs) {
+    private UserCursorWrapper queryUsers(String whereClause, String[] whereArgs) {
         Cursor cursor = mDatabase.query(
                 UserTable.NAME,
                 null, // Columns - null selects all columns

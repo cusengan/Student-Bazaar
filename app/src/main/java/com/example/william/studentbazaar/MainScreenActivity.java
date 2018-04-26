@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.william.studentbazaar.ClubDirectory.ClubMainActivity;
 
@@ -17,6 +18,7 @@ import com.example.william.studentbazaar.ClubDirectory.ClubMainActivity;
 
 public class MainScreenActivity extends AppCompatActivity  {
 
+//    private TextView UserTextView;
     private Button mFormClub;
     private Button mSearchItems;
     private ImageView mImageView;
@@ -29,7 +31,9 @@ public class MainScreenActivity extends AppCompatActivity  {
         setContentView(R.layout.activity_main_screen);
         Bundle intent = getIntent().getExtras();
 
-        mFormClub = (Button)findViewById(R.id.form_club_button);
+//        UserTextView = findViewById(R.id.displayUserInfo);
+//        UserTextView.setText(Global.currentUser.getPhoneNumber());
+        mFormClub = findViewById(R.id.form_club_button);
 
         mFormClub.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -28,10 +28,11 @@ public class DBHelper extends SQLiteOpenHelper {
 
         db.execSQL("create table " + UserTable.NAME + "(" +
                 UserTable.Cols.STUDENTID + " INTEGER PRIMARY KEY," +
-                UserTable.Cols.UUID + ", " +
-                UserTable.Cols.FIRSTNAME + ", " +
-                UserTable.Cols.LASTNAME + ", " +
-                UserTable.Cols.PHONENUMBER +
+                UserTable.Cols.UUID + "NOT NULL, " +
+                UserTable.Cols.FIRSTNAME + "NOT NULL, " +
+                UserTable.Cols.LASTNAME + "NOT NULL, " +
+                UserTable.Cols.PHONENUMBER + "NOT NULL, " +
+                UserTable.Cols.EMAIL + "NOT NULL UNIQUE" +
                 ")"
         );
     }
