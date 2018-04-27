@@ -10,7 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.william.studentbazaar.ClubDirectory.ClubMainActivity;
-
+import com.example.william.studentbazaar.TradeDirectory.TradeMainActivity;
 
 /**
  * Created by William Truong on 4/13/18.
@@ -21,6 +21,7 @@ public class MainScreenActivity extends AppCompatActivity  {
 //    private TextView UserTextView;
     private Button mFormClub;
     private Button mSearchItems;
+    private Button mBuySellTrade;
     private ImageView mImageView;
 
     @Override
@@ -44,6 +45,18 @@ public class MainScreenActivity extends AppCompatActivity  {
                 startActivity(intent);
             }
         });
+
+        mBuySellTrade = (Button)findViewById(R.id.bst_button);
+
+        mBuySellTrade.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent= new Intent(MainScreenActivity.this, TradeMainActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
 
 
     }
