@@ -26,7 +26,11 @@
         <activity android:name=".ClubDirectory.ClubPagerActivity" />
         <activity android:name=".ClubDirectory.ClubFragment" />
         <activity android:name=".RegisterActivity" />
-        <activity android:name=".LoginActivity"></activity>
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".SearchDirectory.SearchClubActivity" />
+        <activity android:name=".SearchDirectory.SearchItemActivity" />
+        <activity android:name=".SearchDirectory.SearchMainActivity" />
+        <activity android:name=".SearchDirectory.SearchUserActivity"></activity>
     </application>
 
 </manifest>
