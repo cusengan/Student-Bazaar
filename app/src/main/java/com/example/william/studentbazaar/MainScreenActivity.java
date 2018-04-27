@@ -10,7 +10,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.william.studentbazaar.ClubDirectory.ClubMainActivity;
-import com.example.william.studentbazaar.SearchDirectory.SearchMain;
 import com.example.william.studentbazaar.TradeDirectory.TradeMainActivity;
 
 /**
