@@ -46,7 +46,7 @@
                     android:layout_weight="0.51" />
 
                 <EditText
-                    android:id="@+id/studentId"
+                    android:id="@+id/studentId_login"
                     android:gravity="left"
                     android:layout_width="200dp"
                     android:layout_height="40dp"
@@ -73,18 +73,18 @@
                     android:layout_weight="0.51" />
 
                 <EditText
-                    android:id="@+id/password"
+                    android:id="@+id/password_login"
                     android:gravity="left"
                     android:layout_width="200dp"
                     android:layout_height="40dp"
-                    android:hint = "Enter Phone #"
+                    android:hint = "Enter Password"
                     android:ems="10"
-                    android:inputType="phone" />
+                    android:inputType="textPassword" />
 
             </LinearLayout>
 
             <Button
-                android:id="@+id/submit_register"
+                android:id="@+id/submit_login"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity ="center_horizontal"
@@ -96,7 +96,7 @@
                 android:textColor="@color/colorHomeButtonTextColor"
                 android:textStyle="bold" />
             <Button
-                android:id="@+id/cancel_register"
+                android:id="@+id/cancel_login"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"

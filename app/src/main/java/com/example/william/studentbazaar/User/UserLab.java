@@ -33,7 +33,6 @@ public class UserLab {
         mContext = context.getApplicationContext();
         mDatabase = new DBHelper(mContext)
                 .getWritableDatabase();
-
     }
 
     public void addUser(User u) {
@@ -54,6 +53,20 @@ public class UserLab {
             cursor.close();
         }
         return Users;
+    }
+
+    public User getUser(String id, String password) {
+        String whereClause = String.format("%s = ? AND %s = ?", UserTable.Cols.STUDENTID, UserTable.Cols.PASSWORD);
+        UserCursorWrapper cursor = queryUsers(whereClause, new String[]{id, password});
+        try {
+            if (cursor.getCount() == 0) {
+                return null;
+            }
+            cursor.moveToFirst();
+            return cursor.getUser();
+        } finally {
+            cursor.close();
+        }
     }
 
     public User getUser(UUID id) {
@@ -101,6 +114,7 @@ public class UserLab {
         values.put(LASTNAME, User.getLastName());
         values.put(STUDENTID, User.getStudentId());
         values.put(PHONENUMBER, User.getPhoneNumber());
+        values.put(EMAIL, User.getEmail());
 
         return values;
     }

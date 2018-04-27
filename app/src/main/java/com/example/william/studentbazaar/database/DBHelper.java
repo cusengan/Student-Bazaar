@@ -4,6 +4,7 @@ package com.example.william.studentbazaar.database;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import com.example.william.studentbazaar.database.StudentBazaarDbSchema.ClubTable;
 import com.example.william.studentbazaar.database.StudentBazaarDbSchema.UserTable;
@@ -27,15 +28,16 @@ public class DBHelper extends SQLiteOpenHelper {
         );
 
         db.execSQL("create table " + UserTable.NAME + "(" +
-                UserTable.Cols.STUDENTID + " INTEGER PRIMARY KEY," +
-                UserTable.Cols.UUID + "NOT NULL, " +
-                UserTable.Cols.FIRSTNAME + "NOT NULL, " +
-                UserTable.Cols.LASTNAME + "NOT NULL, " +
-                UserTable.Cols.PHONENUMBER + "NOT NULL, " +
-                UserTable.Cols.EMAIL + "NOT NULL UNIQUE" +
-                UserTable.Cols.PASSWORD + "NOT NULL" +
+                UserTable.Cols.STUDENTID + " INTEGER PRIMARY KEY, " +
+                UserTable.Cols.UUID + " TEXT NOT NULL, " +
+                UserTable.Cols.FIRSTNAME + " TEXT NOT NULL, " +
+                UserTable.Cols.LASTNAME + " TEXT NOT NULL, " +
+                UserTable.Cols.PHONENUMBER + " TEXT NOT NULL, " +
+                UserTable.Cols.EMAIL + " TEXT NOT NULL UNIQUE, " +
+                UserTable.Cols.PASSWORD + " TEXT NOT NULL" +
                 ")"
         );
+        
     }
 
     @Override
