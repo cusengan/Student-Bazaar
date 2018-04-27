@@ -19,8 +19,6 @@ import com.example.william.studentbazaar.User.UserLab;
 
 public class RegisterActivity extends AppCompatActivity {
 
-    private Button mSubmitButton;
-    private Button mCancelButton;
 
     private EditText mEmail;
     private EditText mFirstName;
@@ -35,6 +33,9 @@ public class RegisterActivity extends AppCompatActivity {
     private String studentId;
     private String phoneNumber;
     private String password;
+
+    private Button mSubmitButton;
+    private Button mCancelButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

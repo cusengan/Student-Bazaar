@@ -25,7 +25,7 @@ public class IntroductionActivity extends AppCompatActivity {
         login.setOnClickListener( new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                Intent intent= new Intent(IntroductionActivity.this, MainScreenActivity.class);
+                Intent intent= new Intent(IntroductionActivity.this, LoginActivity.class);
 //                intent.putExtra("IS_First_Time",false);
                 startActivity(intent);
             }
