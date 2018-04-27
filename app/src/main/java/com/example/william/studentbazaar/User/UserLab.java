@@ -107,14 +107,15 @@ public class UserLab {
         return new UserCursorWrapper(cursor);
     }
 
-    private static ContentValues getContentValues(User User) {
+    private static ContentValues getContentValues(User user) {
         ContentValues values = new ContentValues();
-        values.put(UUID, User.getId().toString());
-        values.put(FIRSTNAME, User.getFirstName());
-        values.put(LASTNAME, User.getLastName());
-        values.put(STUDENTID, User.getStudentId());
-        values.put(PHONENUMBER, User.getPhoneNumber());
-        values.put(EMAIL, User.getEmail());
+        values.put(UUID, user.getId().toString());
+        values.put(FIRSTNAME, user.getFirstName());
+        values.put(LASTNAME, user.getLastName());
+        values.put(STUDENTID, user.getStudentId());
+        values.put(PHONENUMBER, user.getPhoneNumber());
+        values.put(EMAIL, user.getEmail());
+        values.put(PASSWORD, user.getPassword());
 
         return values;
     }
