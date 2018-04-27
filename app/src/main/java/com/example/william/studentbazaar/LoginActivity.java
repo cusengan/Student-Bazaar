@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -75,10 +76,15 @@ public class LoginActivity extends AppCompatActivity {
 //                }
 
                 User user = UserLab.get(LoginActivity.this).getUser(studentId, password);
-                System.out.println(user.getId());
+                if(user != null){
+                    Log.d("Login", "foundUser");
+                    Log.d("Login", user.getPassword());
+                }else{
+                    Log.d("Login", "no user");
+                }
 //                Global.currentUser = user;
 
-//                Toast.makeText(LoginActivity.this, "User created", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(LoginActivity.this, "Signed in", Toast.LENGTH_SHORT).show();
 //                startActivity(new Intent(LoginActivity.this, MainScreenActivity.class));
             }
         });

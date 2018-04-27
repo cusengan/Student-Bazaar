@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -171,7 +172,12 @@ public class RegisterActivity extends AppCompatActivity {
                 user.setPhoneNumber(phoneNumber);
                 user.setPassword(password);
                 UserLab.get(RegisterActivity.this).addUser(user);
-
+//                User queryUser = UserLab.get(RegisterActivity.this).getUser(studentId, password);
+//                if(queryUser == null){
+//                    Log.d("testing" ,"null user");
+//                }else{
+//                    Log.d("testing", "works");
+//                }
                 Global.currentUser = user;
 
                 Toast.makeText(RegisterActivity.this, "User created", Toast.LENGTH_SHORT).show();
