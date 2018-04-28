@@ -70,13 +70,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!--<ImageButton-->
-        <!--android:id="@+id/crime_camera"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:src="@android:drawable/ic_menu_camera"-->
-        <!--tools:layout_editor_absoluteX="0dp"-->
-        <!--tools:layout_editor_absoluteY="238dp" />-->
 
     <ImageView
         android:id="@+id/item_photo"

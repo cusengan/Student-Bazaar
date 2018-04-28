@@ -8,8 +8,10 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.william.studentbazaar.Global;
+import com.example.william.studentbazaar.LoginActivity;
 import com.example.william.studentbazaar.R;
 import com.example.william.studentbazaar.User.User;
 
@@ -79,6 +81,10 @@ public class CreateItemActivity extends AppCompatActivity {
         mSubmitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(itemName.isEmpty() || itemDescription.isEmpty()){
+                    Toast.makeText(CreateItemActivity.this, "An input box is empty", Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 Item item = new Item();
                 User user = Global.currentUser;
                 item.setName(itemName);
@@ -87,6 +93,7 @@ public class CreateItemActivity extends AppCompatActivity {
                 item.setOnSale(true);
 
                 ItemLab.get(CreateItemActivity.this).addItem(item);
+                finish();
             }
         });
 
