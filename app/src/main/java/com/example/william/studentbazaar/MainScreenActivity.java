@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.william.studentbazaar.ClubDirectory.ClubMainActivity;
+import com.example.william.studentbazaar.SearchDirectory.SearchMainActivity;
 import com.example.william.studentbazaar.TradeDirectory.TradeMainActivity;
 
 /**
@@ -46,16 +47,19 @@ public class MainScreenActivity extends AppCompatActivity  {
                 startActivity(intent);
             }
         });
-/*
+
         mSearchItemsButton = findViewById(R.id.search);
 
         mSearchItemsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainScreenActivity.this, SearchMain.class);
-//                intent.putExtra("IS_First_Time",false);
+                Intent intent = new Intent(MainScreenActivity.this, SearchMainActivity.class);
                 startActivity(intent);
-        mBuySellTrade = (Button)findViewById(R.id.bst_button);
+
+            }
+        });
+
+        mBuySellTrade = findViewById(R.id.item_button);
 
         mBuySellTrade.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,12 +69,6 @@ public class MainScreenActivity extends AppCompatActivity  {
             }
         });
 
-
-
-
-            }
-        });
-*/
     }
 
 }

@@ -27,7 +27,7 @@ public class TradeMainActivity extends AppCompatActivity {
         mSellButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent= new Intent(TradeMainActivity.this, SellItemForm.class);
+                Intent intent= new Intent(TradeMainActivity.this, SellItemFormActivity.class);
                 startActivity(intent);
             }
         });
