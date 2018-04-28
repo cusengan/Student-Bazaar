@@ -14,32 +14,32 @@ import com.example.william.studentbazaar.R;
 
 public class TradeMainActivity extends AppCompatActivity {
 
-    private Button mSellButton;
-    private Button mTradeButton1;
+    private Button mRegisterButton;
+    private Button mListButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_trade_main);
 
-        mSellButton = findViewById(R.id.sell_button);
-
-        mSellButton.setOnClickListener(new View.OnClickListener() {
+        mRegisterButton = findViewById(R.id.item_register_button);
+        mRegisterButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent= new Intent(TradeMainActivity.this, SellItemFormActivity.class);
+                Intent intent = new Intent(TradeMainActivity.this, CreateItemActivity.class);
                 startActivity(intent);
             }
         });
 
-        mTradeButton1 = findViewById(R.id.trade_button);
-
-        mTradeButton1.setOnClickListener(new View.OnClickListener() {
+        mListButton = findViewById(R.id.item_trade_button);
+        mListButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent= new Intent(TradeMainActivity.this, TradeItemForm.class);
+                Intent intent = new Intent(TradeMainActivity.this, ItemListActivity.class);
                 startActivity(intent);
             }
         });
+
+
     }
 }

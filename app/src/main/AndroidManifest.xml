@@ -27,10 +27,10 @@
         <activity android:name=".ClubDirectory.ClubFragment" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".LoginActivity" />
-        <activity android:name=".SearchDirectory.SearchClubActivity" />
-        <activity android:name=".SearchDirectory.SearchItemActivity" />
-        <activity android:name=".SearchDirectory.SearchMainActivity" />
-        <activity android:name=".SearchDirectory.SearchUserActivity"></activity>
+        <activity android:name=".TradeDirectory.ItemListActivity" />
+        <activity android:name=".TradeDirectory.ItemPagerActivity" />
+        <activity android:name=".TradeDirectory.TradeMainActivity" />
+        <activity android:name=".TradeDirectory.CreateItemActivity"></activity>
     </application>
 
 </manifest>

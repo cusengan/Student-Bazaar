@@ -1,4 +1,4 @@
-package com.example.william.studentbazaar.ClubDirectory;
+package com.example.william.studentbazaar.TradeDirectory;
 
 import android.content.Context;
 import android.content.Intent;
@@ -14,48 +14,48 @@ import com.example.william.studentbazaar.R;
 import java.util.List;
 import java.util.UUID;
 
-public class ClubPagerActivity extends AppCompatActivity {
+public class ItemPagerActivity extends AppCompatActivity {
 
     private static final String EXTRA_CRIME_ID =
-            "com.example.william.studentbazaar.club_id";
+            "com.example.william.studentbazaar.item_id";
 
     private ViewPager mViewPager;
-    private List<Club> mClubs;
+    private List<Item> mItems;
 
-    public static Intent newIntent(Context packageContext, UUID clubId) {
-        Intent intent = new Intent(packageContext, ClubPagerActivity.class);
-        intent.putExtra(EXTRA_CRIME_ID, clubId);
+    public static Intent newIntent(Context packageContext, UUID itemId) {
+        Intent intent = new Intent(packageContext, ItemPagerActivity.class);
+        intent.putExtra(EXTRA_CRIME_ID, itemId);
         return intent;
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_club_pager);
+        setContentView(R.layout.activity_item_pager);
 
         UUID crimeId = (UUID) getIntent()
                 .getSerializableExtra(EXTRA_CRIME_ID);
 
-        mViewPager = findViewById(R.id.club_view_pager);
+        mViewPager = findViewById(R.id.item_view_pager);
 
-        mClubs = ClubLab.get(this).getClubs();
+        mItems = ItemLab.get(this).getItems();
         FragmentManager fragmentManager = getSupportFragmentManager();
         mViewPager.setAdapter(new FragmentStatePagerAdapter(fragmentManager) {
 
             @Override
             public Fragment getItem(int position) {
-                Club club = mClubs.get(position);
-                return ClubFragment.newInstance(club.getId());
+                Item item = mItems.get(position);
+                return ItemFragment.newInstance(item.getId());
             }
 
             @Override
             public int getCount() {
-                return mClubs.size();
+                return mItems.size();
             }
         });
 
-        for (int i = 0; i < mClubs.size(); i++) {
-            if (mClubs.get(i).getId().equals(crimeId)) {
+        for (int i = 0; i < mItems.size(); i++) {
+            if (mItems.get(i).getId().equals(crimeId)) {
                 mViewPager.setCurrentItem(i);
                 break;
             }

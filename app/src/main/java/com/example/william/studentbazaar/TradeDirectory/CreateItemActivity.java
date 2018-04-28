@@ -15,7 +15,7 @@ import com.example.william.studentbazaar.R;
  * Created by Michelle Dinh on 4/23/2018.
  */
 
-public class SellItemFormActivity extends AppCompatActivity {
+public class CreateItemActivity extends AppCompatActivity {
 
     private Button mSubmitButton;
     private Button mCancelButton;
@@ -71,13 +71,22 @@ public class SellItemFormActivity extends AppCompatActivity {
             }
         });
 
-        mItemPrice = findViewById(R.id.price_edit_text);
-        itemPrice = Float.parseFloat(mItemPrice.getText().toString());
+//        mItemPrice = findViewById(R.id.price_edit_text);
+//        itemPrice = Float.parseFloat(mItemPrice.getText().toString());
 
         mSubmitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Item item = new Item();
+                item.setName(itemName);
+                item.setName(itemDescription);
+            }
+        });
 
+        mCancelButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
             }
         });
 

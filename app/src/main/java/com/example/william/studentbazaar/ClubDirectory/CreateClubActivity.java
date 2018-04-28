@@ -81,7 +81,6 @@ public class CreateClubActivity extends AppCompatActivity {
                 ClubLab.get(CreateClubActivity.this).addClub(club);
                 Toast.makeText(CreateClubActivity.this, "Club created", Toast.LENGTH_SHORT).show();
                 finish();
-//                startActivity(new Intent(CreateClubActivity.this, ClubListActivity.class));//go to activitylist
             }
         });
     }

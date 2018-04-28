@@ -55,7 +55,6 @@ public class MainScreenActivity extends AppCompatActivity  {
             public void onClick(View v) {
                 Intent intent = new Intent(MainScreenActivity.this, SearchMainActivity.class);
                 startActivity(intent);
-
             }
         });
 

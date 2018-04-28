@@ -16,7 +16,7 @@ import java.util.List;
 
 public class ClubListFragment extends Fragment {
 
-    private RecyclerView mCrimeRecyclerView;
+    private RecyclerView mClubRecyclerView;
     private ClubAdapter mAdapter;
 
     @Override
@@ -24,8 +24,8 @@ public class ClubListFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_club_list, container, false);
 
-        mCrimeRecyclerView = view.findViewById(R.id.club_recycler_view);
-        mCrimeRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        mClubRecyclerView = view.findViewById(R.id.club_recycler_view);
+        mClubRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
         updateUI();
         return view;
@@ -43,7 +43,7 @@ public class ClubListFragment extends Fragment {
 
         if (mAdapter == null) {
             mAdapter = new ClubAdapter(clubs);
-            mCrimeRecyclerView.setAdapter(mAdapter);
+            mClubRecyclerView.setAdapter(mAdapter);
         } else {
             mAdapter.setCrimes(clubs);
             mAdapter.notifyDataSetChanged();
@@ -105,8 +105,8 @@ public class ClubListFragment extends Fragment {
             return mClubs.size();
         }
 
-        public void setCrimes(List<Club> crimes) {
-            mClubs = crimes;
+        public void setCrimes(List<Club> clubs) {
+            mClubs = clubs;
         }
     }
 }
