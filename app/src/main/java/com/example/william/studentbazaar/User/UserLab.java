@@ -69,6 +69,20 @@ public class UserLab {
         }
     }
 
+    public User getUser(String id) {
+        String whereClause = String.format("%s = ?", UserTable.Cols.STUDENTID);
+        UserCursorWrapper cursor = queryUsers(whereClause, new String[]{id});
+        try {
+            if (cursor.getCount() == 0) {
+                return null;
+            }
+            cursor.moveToFirst();
+            return cursor.getUser();
+        } finally {
+            cursor.close();
+        }
+    }
+
     public User getUser(UUID id) {
         UserCursorWrapper cursor = queryUsers(
                 UserTable.Cols.UUID + " = ?",

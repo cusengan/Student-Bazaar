@@ -10,6 +10,8 @@ import android.widget.TextView;
 import com.example.william.studentbazaar.R;
 import com.example.william.studentbazaar.TradeDirectory.Item;
 import com.example.william.studentbazaar.TradeDirectory.ItemLab;
+import com.example.william.studentbazaar.User.User;
+import com.example.william.studentbazaar.User.UserLab;
 
 import java.util.UUID;
 
@@ -19,6 +21,9 @@ public class ItemFragment extends Fragment {
     private Item mItem;
     private TextView mItemName;
     private TextView mItemDescription;
+    private TextView mContactName;
+    private TextView mContactNumber;
+    private TextView mContactEmail;
 
     public static ItemFragment newInstance(UUID crimeId) {
         Bundle args = new Bundle();
@@ -42,10 +47,19 @@ public class ItemFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View v = inflater.inflate(R.layout.activity_item_fragment, container, false);
+        User seller = UserLab.get(getActivity()).getUser(mItem.getOwnerId());
         mItemName = v.findViewById(R.id.item_name_text_view);
-        mItemName.setText(mItem.getName());
         mItemDescription = v.findViewById(R.id.item_description_text_view);
+        mContactName = v.findViewById(R.id.contact_name);
+        mContactNumber = v.findViewById(R.id.contact_number);
+        mContactEmail = v.findViewById(R.id.contact_email);
+
+        mItemName.setText(mItem.getName());
         mItemDescription.setText(mItem.getDescription());
+        mContactName.setText(seller.getFullName());
+        mContactNumber.setText(seller.getPhoneNumber());
+        mContactEmail.setText(seller.getEmail());
+
         return v;
     }
 }

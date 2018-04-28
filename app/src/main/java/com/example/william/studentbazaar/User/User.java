@@ -40,6 +40,10 @@ public class User {
         this.mLastName = mLastName;
     }
 
+    public String getFullName() {
+        return mFirstName + " " + mLastName;
+    }
+
     public String getStudentId() {
         return mStudentId;
     }

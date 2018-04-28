@@ -38,11 +38,13 @@
         android:id="@+id/description_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="228dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="216dp"
         android:text="Description:"
         android:textColor="@android:color/black"
         android:textSize="22sp"
+        app:layout_constraintBottom_toTopOf="@+id/item_description_edit_text"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -50,24 +52,31 @@
         android:id="@+id/price_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="112dp"
-        android:layout_marginStart="24dp"
+        android:layout_marginBottom="120dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
         android:text="Price: $"
         android:textColor="@android:color/black"
         android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/item_description_edit_text" />
 
     <EditText
         android:id="@+id/item_name_edit_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="24dp"
-        android:layout_marginTop="120dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:ems="10"
         android:textSize="22sp"
+        app:layout_constraintBottom_toTopOf="@+id/item_description_edit_text"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="0.428"
+        app:layout_constraintStart_toEndOf="@+id/name_text_view"
+        app:layout_constraintTop_toBottomOf="@+id/item_info_text_view"
+        app:layout_constraintVertical_bias="0.215" />
 
     <EditText
         android:id="@+id/item_description_edit_text"
@@ -87,11 +96,17 @@
         android:id="@+id/price_edit_text"
         android:layout_width="260dp"
         android:layout_height="47dp"
-        android:layout_marginBottom="104dp"
-        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="100dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:ems="10"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.555"
+        app:layout_constraintStart_toEndOf="@+id/price_text_view"
+        app:layout_constraintTop_toBottomOf="@+id/item_description_edit_text"
+        app:layout_constraintVertical_bias="0.49" />
 
     <Button
         android:id="@+id/item_submit_button"

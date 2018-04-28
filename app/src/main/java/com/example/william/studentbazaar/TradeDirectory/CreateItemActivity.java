@@ -9,7 +9,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.william.studentbazaar.Global;
 import com.example.william.studentbazaar.R;
+import com.example.william.studentbazaar.User.User;
 
 /**
  * Created by Michelle Dinh on 4/23/2018.
@@ -78,8 +80,13 @@ public class CreateItemActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Item item = new Item();
+                User user = Global.currentUser;
                 item.setName(itemName);
-                item.setName(itemDescription);
+                item.setDescription(itemDescription);
+                item.setOwnerId(user.getStudentId());
+                item.setOnSale(true);
+
+                ItemLab.get(CreateItemActivity.this).addItem(item);
             }
         });
 

@@ -39,8 +39,8 @@ public class ItemLab {
 
     }
 
-    public void addItem(Item c) {
-        ContentValues values = getContentValues(c);
+    public void addItem(Item i) {
+        ContentValues values = getContentValues(i);
         mDatabase.insert(StudentBazaarDbSchema.ItemTable.NAME, null, values);
     }
 
