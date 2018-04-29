@@ -70,20 +70,21 @@ public class LoginActivity extends AppCompatActivity {
         mSubmitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                if (mClubTitle.getText().toString().equals("")) { //check error
-//                    Toast.makeText(CreateClubActivity.this, "Please enter a valid club name" ,Toast.LENGTH_SHORT).show();
-//                    return;
-//                }
+                if (mStudentId.getText().toString().equals("") || mPassword.getText().toString().equals("")) { //check error
+                    Toast.makeText(LoginActivity.this, "Please enter a valid club name" ,Toast.LENGTH_SHORT).show();
+                    return;
+                }
 
                 User user = UserLab.get(LoginActivity.this).getUser(studentId, password);
                 if(user != null){
-                    Log.d("Login", "foundUser");
-                    Log.d("Login", user.getPassword());
+//                    Log.d("Login", "foundUser");
+//                    Log.d("Login", user.getPassword());
                     Global.currentUser = user;
                     Toast.makeText(LoginActivity.this, "Signed in", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(LoginActivity.this, MainScreenActivity.class));
                 }else{
-                    Log.d("Login", "no user");
+//                    Log.d("Login", "no user");
+                    Toast.makeText(LoginActivity.this, "Invalid ID/Password combination", Toast.LENGTH_SHORT).show();
                 }
 
             }

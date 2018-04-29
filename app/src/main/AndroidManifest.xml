@@ -30,7 +30,9 @@
         <activity android:name=".TradeDirectory.ItemListActivity" />
         <activity android:name=".TradeDirectory.ItemPagerActivity" />
         <activity android:name=".TradeDirectory.TradeMainActivity" />
-        <activity android:name=".TradeDirectory.CreateItemActivity"></activity>
+        <activity android:name=".TradeDirectory.CreateItemActivity" />
+        <activity android:name=".TradeDirectory.UserItemPagerActivity" />
+        <activity android:name=".TradeDirectory.UserItemListActivity"></activity>
     </application>
 
 </manifest>

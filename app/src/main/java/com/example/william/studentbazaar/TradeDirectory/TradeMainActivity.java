@@ -16,6 +16,7 @@ public class TradeMainActivity extends AppCompatActivity {
 
     private Button mRegisterButton;
     private Button mListButton;
+    private Button mMyItemButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +37,15 @@ public class TradeMainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(TradeMainActivity.this, ItemListActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        mMyItemButton = findViewById(R.id.user_item_button);
+        mMyItemButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(TradeMainActivity.this, UserItemListActivity.class);
                 startActivity(intent);
             }
         });

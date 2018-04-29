@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
+import com.example.william.studentbazaar.User.User;
 import com.example.william.studentbazaar.database.Item.ItemCursorWrapper;
 import com.example.william.studentbazaar.database.DBHelper;
 import com.example.william.studentbazaar.database.StudentBazaarDbSchema;
@@ -47,6 +48,21 @@ public class ItemLab {
     public List<Item> getItems() {
         List<Item> Items = new ArrayList<>();
         ItemCursorWrapper cursor = queryItems(null, null);
+        try {
+            cursor.moveToFirst();
+            while (!cursor.isAfterLast()) {
+                Items.add(cursor.getItem());
+                cursor.moveToNext();
+            }
+        } finally {
+            cursor.close();
+        }
+        return Items;
+    }
+
+    public List<Item> getItems(User user) {
+        List<Item> Items = new ArrayList<>();
+        ItemCursorWrapper cursor = queryItems("OWNERID=?", new String[]{user.getStudentId()});
         try {
             cursor.moveToFirst();
             while (!cursor.isAfterLast()) {
