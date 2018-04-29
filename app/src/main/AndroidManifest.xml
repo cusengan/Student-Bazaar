@@ -7,6 +7,7 @@
         android:required="false" />
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
 
     <application
         android:allowBackup="true"
@@ -30,7 +31,7 @@
         <activity android:name=".ClubDirectory.DisplayClubsActivity" />
         <activity android:name=".ClubDirectory.ClubListActivity" />
         <activity android:name=".ClubDirectory.ClubPagerActivity" />
-        <!--<activity android:name=".ClubDirectory.ClubFragment" />-->
+        <!-- <activity android:name=".ClubDirectory.ClubFragment" /> -->
         <activity android:name=".RegisterActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".TradeDirectory.ItemListActivity" />
@@ -39,7 +40,7 @@
         <activity android:name=".TradeDirectory.CreateItemActivity" />
         <activity android:name=".TradeDirectory.UserItemPagerActivity" />
         <activity android:name=".TradeDirectory.UserItemListActivity" />
-        <activity android:name=".TradeDirectory.UpdateItemActivity"></activity>
+        <activity android:name=".TradeDirectory.UpdateItemActivity" />
 
         <provider
             android:name="android.support.v4.content.FileProvider"
@@ -50,7 +51,8 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/files" />
         </provider>
+
+        <activity android:name=".TradeDirectory.SearchItemListActivity"></activity>
     </application>
-    <uses-permission android:name="android.permission.SEND_SMS" />
 
 </manifest>

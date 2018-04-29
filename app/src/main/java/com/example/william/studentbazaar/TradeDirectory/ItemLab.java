@@ -96,6 +96,21 @@ public class ItemLab {
         return items;
     }
 
+    public List<Item> getItemsOnSale(String query) {
+        List<Item> items = new ArrayList<>();
+        ItemCursorWrapper cursor = queryItems(ONSALE + " = 1 AND NAME LIKE ?", new String[]{query});
+        try {
+            cursor.moveToFirst();
+            while (!cursor.isAfterLast()) {
+                items.add(cursor.getItem());
+                cursor.moveToNext();
+            }
+        } finally {
+            cursor.close();
+        }
+        return items;
+    }
+
     public Item getItem(UUID id) {
         ItemCursorWrapper cursor = queryItems(
                 StudentBazaarDbSchema.ItemTable.Cols.UUID + " = ?",

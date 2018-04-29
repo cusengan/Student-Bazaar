@@ -16,7 +16,7 @@ import java.util.UUID;
 
 public class ItemPagerActivity extends AppCompatActivity {
 
-    private static final String EXTRA_CRIME_ID =
+    private static final String EXTRA_ITEM_ID =
             "com.example.william.studentbazaar.item_id";
 
     private ViewPager mViewPager;
@@ -24,7 +24,7 @@ public class ItemPagerActivity extends AppCompatActivity {
 
     public static Intent newIntent(Context packageContext, UUID itemId) {
         Intent intent = new Intent(packageContext, ItemPagerActivity.class);
-        intent.putExtra(EXTRA_CRIME_ID, itemId);
+        intent.putExtra(EXTRA_ITEM_ID, itemId);
         return intent;
     }
 
@@ -33,8 +33,8 @@ public class ItemPagerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_item_pager);
 
-        UUID crimeId = (UUID) getIntent()
-                .getSerializableExtra(EXTRA_CRIME_ID);
+        UUID itemId = (UUID) getIntent()
+                .getSerializableExtra(EXTRA_ITEM_ID);
 
         mViewPager = findViewById(R.id.item_view_pager);
 
@@ -55,7 +55,7 @@ public class ItemPagerActivity extends AppCompatActivity {
         });
 
         for (int i = 0; i < mItems.size(); i++) {
-            if (mItems.get(i).getId().equals(crimeId)) {
+            if (mItems.get(i).getId().equals(itemId)) {
                 mViewPager.setCurrentItem(i);
                 break;
             }

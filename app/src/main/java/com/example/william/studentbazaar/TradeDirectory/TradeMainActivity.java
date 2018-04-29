@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.william.studentbazaar.R;
+import com.example.william.studentbazaar.SearchDirectory.SearchItemActivity;
 
 /**
  * Created by Michelle Dinh on 4/23/2018.
@@ -16,6 +17,7 @@ public class TradeMainActivity extends AppCompatActivity {
 
     private Button mRegisterButton;
     private Button mListButton;
+    private Button mItemSearchButton;
     private Button mMyItemButton;
 
     @Override
@@ -28,6 +30,15 @@ public class TradeMainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(TradeMainActivity.this, CreateItemActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        mItemSearchButton = findViewById(R.id.item_search_button);
+        mItemSearchButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(TradeMainActivity.this, SearchItemListActivity.class);
                 startActivity(intent);
             }
         });
