@@ -40,7 +40,9 @@ public class SearchItemListFragment extends Fragment {
 
     private void updateUI() {
         ItemLab itemLab = ItemLab.get(getActivity());
-        List<Item> items = itemLab.getItemsOnSale("PC");
+        SearchItemListActivity activity = (SearchItemListActivity)getActivity();
+        List<Item> items = itemLab.getItemsOnSale(activity.getQuery());
+//        List<Item> items = itemLab.getItemsOnSale("PC");
 
         if (mAdapter == null) {
             mAdapter = new SearchItemListFragment.ItemAdapter(items);

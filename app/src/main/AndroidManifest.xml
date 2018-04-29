@@ -52,7 +52,8 @@
                 android:resource="@xml/files" />
         </provider>
 
-        <activity android:name=".TradeDirectory.SearchItemListActivity"></activity>
+        <activity android:name=".TradeDirectory.SearchItemListActivity" />
+        <activity android:name=".SearchDirectory.SearchItemActivity"></activity>
     </application>
 
 </manifest>

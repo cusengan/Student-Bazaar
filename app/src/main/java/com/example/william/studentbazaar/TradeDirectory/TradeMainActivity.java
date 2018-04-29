@@ -38,7 +38,7 @@ public class TradeMainActivity extends AppCompatActivity {
         mItemSearchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(TradeMainActivity.this, SearchItemListActivity.class);
+                Intent intent = new Intent(TradeMainActivity.this, SearchItemActivity.class);
                 startActivity(intent);
             }
         });
