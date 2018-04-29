@@ -77,13 +77,10 @@ public class LoginActivity extends AppCompatActivity {
 
                 User user = UserLab.get(LoginActivity.this).getUser(studentId, password);
                 if(user != null){
-//                    Log.d("Login", "foundUser");
-//                    Log.d("Login", user.getPassword());
                     Global.currentUser = user;
                     Toast.makeText(LoginActivity.this, "Signed in", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(LoginActivity.this, MainScreenActivity.class));
                 }else{
-//                    Log.d("Login", "no user");
                     Toast.makeText(LoginActivity.this, "Invalid ID/Password combination", Toast.LENGTH_SHORT).show();
                 }
 

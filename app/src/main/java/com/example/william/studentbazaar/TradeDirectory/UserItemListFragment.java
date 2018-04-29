@@ -75,7 +75,7 @@ public class UserItemListFragment extends Fragment {
 
         @Override
         public void onClick(View view) {
-            Intent intent = ItemPagerActivity.newIntent(getActivity(), mItem.getId());
+            Intent intent = UserItemPagerActivity.newIntent(getActivity(), mItem.getId());
             startActivity(intent);
         }
     }
@@ -89,13 +89,13 @@ public class UserItemListFragment extends Fragment {
         }
 
         @Override
-        public UserItemListFragment.ItemHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        public ItemHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             LayoutInflater layoutInflater = LayoutInflater.from(getActivity());
             return new ItemHolder(layoutInflater, parent);
         }
 
         @Override
-        public void onBindViewHolder(UserItemListFragment.ItemHolder holder, int position) {
+        public void onBindViewHolder(ItemHolder holder, int position) {
             Item Item = mItems.get(position);
             holder.bind(Item);
         }

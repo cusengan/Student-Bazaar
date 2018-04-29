@@ -1,10 +1,16 @@
 package com.example.william.studentbazaar.TradeDirectory;
 
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.net.Uri;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.support.v4.content.FileProvider;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.william.studentbazaar.R;
@@ -13,6 +19,7 @@ import com.example.william.studentbazaar.TradeDirectory.ItemLab;
 import com.example.william.studentbazaar.User.User;
 import com.example.william.studentbazaar.User.UserLab;
 
+import java.io.File;
 import java.util.UUID;
 
 public class ItemFragment extends Fragment {
@@ -24,6 +31,8 @@ public class ItemFragment extends Fragment {
     private TextView mContactName;
     private TextView mContactNumber;
     private TextView mContactEmail;
+    private File mPhotoFile;
+    private ImageView mPhotoView;
 
     public static ItemFragment newInstance(UUID crimeId) {
         Bundle args = new Bundle();
@@ -39,6 +48,8 @@ public class ItemFragment extends Fragment {
         super.onCreate(savedInstanceState);
         UUID itemId = (UUID) getArguments().getSerializable(ARG_ITEM_ID);
         mItem = ItemLab.get(getActivity()).getItem(itemId);
+        Log.d("file", mItem.getPhotoFilename());
+        mPhotoFile = ItemLab.get(getActivity()).getPhotoFile(mItem);
 
     }
 
@@ -60,6 +71,21 @@ public class ItemFragment extends Fragment {
         mContactNumber.setText(seller.getPhoneNumber());
         mContactEmail.setText(seller.getEmail());
 
+        mPhotoView = v.findViewById(R.id.item_display_photo);
+        updatePhotoView();
+
         return v;
     }
+
+    private void updatePhotoView() {
+        if (mPhotoFile == null || !mPhotoFile.exists()) {
+            mPhotoView.setImageDrawable(null);
+            Log.d("file", "does not exist");
+        } else {
+            Bitmap bitmap = PictureUtils.getScaledBitmap(
+                    mPhotoFile.getPath(), getActivity());
+            mPhotoView.setImageBitmap(bitmap);
+        }
+    }
+
 }

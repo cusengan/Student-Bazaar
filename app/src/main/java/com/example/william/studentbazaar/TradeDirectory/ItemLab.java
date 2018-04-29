@@ -10,6 +10,7 @@ import com.example.william.studentbazaar.database.Item.ItemCursorWrapper;
 import com.example.william.studentbazaar.database.DBHelper;
 import com.example.william.studentbazaar.database.StudentBazaarDbSchema;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -43,6 +44,11 @@ public class ItemLab {
     public void addItem(Item i) {
         ContentValues values = getContentValues(i);
         mDatabase.insert(StudentBazaarDbSchema.ItemTable.NAME, null, values);
+    }
+
+    public File getPhotoFile(Item item) {
+        File filesDir = mContext.getFilesDir();
+        return new File(filesDir, item.getPhotoFilename());
     }
 
     public List<Item> getItems() {

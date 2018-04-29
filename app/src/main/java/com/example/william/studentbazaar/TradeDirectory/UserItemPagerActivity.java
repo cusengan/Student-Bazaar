@@ -45,7 +45,7 @@ public class UserItemPagerActivity extends AppCompatActivity {
             @Override
             public Fragment getItem(int position) {
                 Item item = mItems.get(position);
-                return ItemFragment.newInstance(item.getId());
+                return UserItemFragment.newInstance(item.getId());
             }
 
             @Override

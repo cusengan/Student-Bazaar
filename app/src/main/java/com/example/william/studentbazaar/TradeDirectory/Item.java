@@ -26,6 +26,10 @@ public class Item {
         this.ownerId = ownerId;
     }
 
+    public void setId(UUID id){
+        mId = id;
+    }
+
     public UUID getId() {
         return mId;
     }

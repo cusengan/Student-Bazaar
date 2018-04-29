@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.william.studentbazaar.R;
@@ -24,6 +25,9 @@ public class UserItemFragment extends Fragment {
     private TextView mContactName;
     private TextView mContactNumber;
     private TextView mContactEmail;
+
+    private Button mUpdateButton;
+    private Button mBackButton;
 
     public static UserItemFragment newInstance(UUID crimeId) {
         Bundle args = new Bundle();
@@ -59,6 +63,22 @@ public class UserItemFragment extends Fragment {
         mContactName.setText(seller.getFullName());
         mContactNumber.setText(seller.getPhoneNumber());
         mContactEmail.setText(seller.getEmail());
+
+        mUpdateButton = v.findViewById(R.id.update_item_button);
+        mUpdateButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                
+            }
+        });
+
+        mBackButton = v.findViewById(R.id.user_back_button);
+        mBackButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().finish();
+            }
+        });
 
         return v;
     }
