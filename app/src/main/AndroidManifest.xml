@@ -51,5 +51,6 @@
                 android:resource="@xml/files" />
         </provider>
     </application>
+    <uses-permission android:name="android.permission.SEND_SMS" />
 
 </manifest>

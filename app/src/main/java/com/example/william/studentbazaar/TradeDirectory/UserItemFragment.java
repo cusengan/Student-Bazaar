@@ -1,5 +1,6 @@
 package com.example.william.studentbazaar.TradeDirectory;
 
+import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -26,7 +27,7 @@ public class UserItemFragment extends Fragment {
     private TextView mContactNumber;
     private TextView mContactEmail;
 
-    private Button mUpdateButton;
+    private Button mSetForSaleButton;
     private Button mBackButton;
 
     public static UserItemFragment newInstance(UUID crimeId) {
@@ -64,11 +65,14 @@ public class UserItemFragment extends Fragment {
         mContactNumber.setText(seller.getPhoneNumber());
         mContactEmail.setText(seller.getEmail());
 
-        mUpdateButton = v.findViewById(R.id.update_item_button);
-        mUpdateButton.setOnClickListener(new View.OnClickListener() {
+        mSetForSaleButton = v.findViewById(R.id.set_for_sale_button);
+        setSaleButtonText();
+        mSetForSaleButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                
+                mItem.setOnSale(!mItem.isOnSale());
+                setSaleButtonText();
+                ItemLab.get(getActivity()).updateItem(mItem);
             }
         });
 
@@ -81,5 +85,13 @@ public class UserItemFragment extends Fragment {
         });
 
         return v;
+    }
+
+    private void setSaleButtonText(){
+        if(mItem.isOnSale()){
+            mSetForSaleButton.setText("Click to make item not available for trading");
+        }else{
+            mSetForSaleButton.setText("Click to make item available for trading");
+        }
     }
 }
