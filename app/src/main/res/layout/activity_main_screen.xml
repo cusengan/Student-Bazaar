@@ -46,12 +46,12 @@
                 android:textStyle="bold" />
 
             <Button
-                android:id="@+id/Communicate"
+                android:id="@+id/event_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:background="@drawable/buttondefault"
-                android:text="Communication"
+                android:text="Events"
                 android:textColor="@color/colorHomeTextViewColor"
                 android:textSize="8pt"
                 android:textStyle="bold" />

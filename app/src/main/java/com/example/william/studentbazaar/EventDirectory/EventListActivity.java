@@ -12,6 +12,6 @@ public class EventListActivity extends SingleFragmentActivity {
 
     @Override
     protected Fragment createFragment() {
-        return new ClubListFragment();
+        return new EventListFragment();
     }
 }

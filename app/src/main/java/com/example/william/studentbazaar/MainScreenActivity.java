@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.william.studentbazaar.ClubDirectory.ClubMainActivity;
+import com.example.william.studentbazaar.EventDirectory.EventMainActivity;
 import com.example.william.studentbazaar.SearchDirectory.SearchMainActivity;
 import com.example.william.studentbazaar.TradeDirectory.TradeMainActivity;
 
@@ -21,7 +22,7 @@ public class MainScreenActivity extends AppCompatActivity  {
 
 //    private TextView UserTextView;
     private Button mFormClub;
-    private Button mSearchItemsButton;
+    private Button mEventButton;
     private Button mSearchItems;
     private Button mBuySellTrade;
     private ImageView mImageView;
@@ -34,7 +35,7 @@ public class MainScreenActivity extends AppCompatActivity  {
         setContentView(R.layout.activity_main_screen);
         Bundle intent = getIntent().getExtras();
 
-        //testing 
+        //testing
 //        UserTextView = findViewById(R.id.displayUserInfo);
 //        UserTextView.setText(Global.currentUser.getPhoneNumber());
         mFormClub = findViewById(R.id.form_club_button);
@@ -48,15 +49,15 @@ public class MainScreenActivity extends AppCompatActivity  {
             }
         });
 
-//        mSearchItemsButton = findViewById(R.id.search);
+        mEventButton = findViewById(R.id.event_button);
 
-//        mSearchItemsButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(MainScreenActivity.this, SearchMainActivity.class);
-//                startActivity(intent);
-//            }
-//        });
+        mEventButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent= new Intent(MainScreenActivity.this, EventMainActivity.class);
+                startActivity(intent);
+            }
+        });
 
         mBuySellTrade = findViewById(R.id.item_button);
 

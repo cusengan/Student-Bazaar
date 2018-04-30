@@ -39,13 +39,13 @@ public class EventListFragment extends Fragment {
 
     private void updateUI() {
         EventLab eventLab = EventLab.get(getActivity());
-        List<Event> events = eventLab.getEvents();
+        List<Event> events = eventLab.getEventsOnDisplay();
 
         if (mAdapter == null) {
             mAdapter = new EventAdapter(events);
             mEventRecyclerView.setAdapter(mAdapter);
         } else {
-            mAdapter.setCrimes(events);
+            mAdapter.setEvents(events);
             mAdapter.notifyDataSetChanged();
         }
 
@@ -105,7 +105,7 @@ public class EventListFragment extends Fragment {
             return mEvents.size();
         }
 
-        public void setCrimes(List<Event> events) {
+        public void setEvents(List<Event> events) {
             mEvents = events;
         }
     }
