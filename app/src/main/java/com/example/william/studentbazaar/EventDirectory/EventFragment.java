@@ -19,6 +19,8 @@ import com.example.william.studentbazaar.EventDirectory.Event;
 import com.example.william.studentbazaar.EventDirectory.EventFragment;
 import com.example.william.studentbazaar.Global;
 import com.example.william.studentbazaar.R;
+import com.example.william.studentbazaar.User.User;
+import com.example.william.studentbazaar.User.UserLab;
 
 import java.util.UUID;
 
@@ -28,10 +30,9 @@ public class EventFragment extends Fragment {
     private Event mEvent;
     private TextView mEventName;
     private TextView mEventDescription;
-    private TextView mUsers;
-    private Button mJoinEventButton;
-    private Button mLeaveEventButton;
-    private Button mAnnouncementButton;
+    private TextView mEventCreator;
+    private Button mEventDisplayButton;
+    private Button mEventBackButton;
 
     public static EventFragment newInstance(UUID eventId) {
         Bundle args = new Bundle();
@@ -55,51 +56,48 @@ public class EventFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View v = inflater.inflate(R.layout.activity_event_fragment, container, false);
-//        inClub = new InClub();
-//        inClub.setClubId(mClub.getId());
-//        inClub.setStudentId(Global.currentUser.getStudentId());
-//
-//        mClubName = v.findViewById(R.id.club_name_text_view);
-//        mClubName.setText(mClub.getName());
-//        mClubDescription = v.findViewById(R.id.club_description_text);
-//        mClubDescription.setText(mClub.getDescription());
-//        mUsers = v.findViewById(R.id.club_users);
-//        mUsers.setText(getUsers());
-//
-//        mJoinClubButton = v.findViewById(R.id.join_club_button);
-//        mJoinClubButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//                InClubLab.get(getActivity()).addInClub(inClub);
-//                mUsers.setText(getUsers());
-//            }
-//        });
-//
-//        mLeaveClubButton = v.findViewById(R.id.leave_club_button);
-//        mLeaveClubButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                InClubLab.get(getActivity()).deleteInClub(inClub);
-//                mUsers.setText(getUsers());
-//            }
-//        });
-//
-//        mAnnouncementButton = v.findViewById(R.id.announcement_button);
-//        mAnnouncementButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                if(InClubLab.get(getActivity()).getInClub(inClub) == null){
-//                    Toast.makeText(getActivity(), "You must join the club before you can make an announcement" ,Toast.LENGTH_SHORT).show();
-//                    return;
-//                }
-//                Intent intent = new Intent(getActivity(), ClubAnnouncementActivity.class);
-//                intent.putExtra("clubId", mClub.getId().toString());
-//                startActivity(intent);
-//            }
-//        });
+
+        mEventName = v.findViewById(R.id.event_name_text_view);
+        mEventName.setText(mEvent.getName());
+        mEventDescription = v.findViewById(R.id.event_description_text);
+        mEventDescription.setText(mEvent.getDescription());
+
+        mEventCreator = v.findViewById(R.id.event_creater_name);
+        User creator = UserLab.get(getActivity()).getUser(mEvent.getOwnerId());
+        mEventCreator.setText(creator.getFullName());
+
+        mEventDisplayButton = v.findViewById(R.id.set_event_display_button);
+        if(Global.currentUser.getStudentId() != mEvent.getOwnerId()){
+            mEventDisplayButton.setEnabled(false);
+        }
+        setDisplayButtonText();
+        mEventDisplayButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mEvent.setDisplay(!mEvent.onDisplay());
+                EventLab.get(getActivity()).updateEvent(mEvent);
+                setDisplayButtonText();
+            }
+        });
+
+        mEventBackButton = v.findViewById(R.id.event_back_button);
+        mEventBackButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().finish();
+            }
+        });
+
 
 
         return v;
+    }
+
+    private void setDisplayButtonText(){
+        if(mEvent.onDisplay()){
+            mEventDisplayButton.setText("Click to turn off displaying of this event");
+        }else{
+            mEventDisplayButton.setText("Click to turn on displaying of this event");
+        }
     }
 }
