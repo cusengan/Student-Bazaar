@@ -38,4 +38,13 @@ public class StudentBazaarDbSchema {
         }
     }
 
+    public static final class InClubTable {
+        public static final String NAME = "inClub";
+        public static final class Cols {
+            public static final String UUID = "uuid";
+            public static final String CLUBID = "clubId";
+            public static final String STUDENTID = "studentId";
+        }
+    }
+
 }

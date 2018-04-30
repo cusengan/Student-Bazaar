@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -31,6 +32,7 @@ public class CreateClubActivity extends AppCompatActivity {
         mCreateClubButton = findViewById(R.id.submit_club_button);
 
         mClubTitle = findViewById(R.id.create_club_edit_text);
+        mClubTitle.setGravity(Gravity.CENTER);
         mClubTitle.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -49,6 +51,7 @@ public class CreateClubActivity extends AppCompatActivity {
         });
 
         mClubDescription = findViewById(R.id.club_description_edit_text);
+        mClubDescription.setGravity(Gravity.CENTER);
         mClubDescription.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {

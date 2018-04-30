@@ -53,7 +53,8 @@
         </provider>
 
         <activity android:name=".TradeDirectory.SearchItemListActivity" />
-        <activity android:name=".SearchDirectory.SearchItemActivity"></activity>
+        <activity android:name=".SearchDirectory.SearchItemActivity" />
+        <activity android:name=".ClubDirectory.ClubAnnouncementActivity"></activity>
     </application>
 
 </manifest>
