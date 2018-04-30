@@ -46,17 +46,6 @@
                 android:textStyle="bold" />
 
             <Button
-                android:id="@+id/search"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/buttondefault"
-                android:text="Search Items"
-                android:textColor="@color/colorHomeTextViewColor"
-                android:textSize="8pt"
-                android:textStyle="bold" />
-
-            <Button
                 android:id="@+id/Communicate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

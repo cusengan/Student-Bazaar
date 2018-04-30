@@ -50,6 +50,7 @@
 
     <EditText
         android:id="@+id/item_name_edit_text"
+        android:inputType="textCapSentences"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
@@ -66,6 +67,7 @@
 
     <EditText
         android:id="@+id/item_description_edit_text"
+        android:inputType="textCapSentences"
         android:layout_width="328dp"
         android:layout_height="62dp"
         android:layout_marginEnd="16dp"

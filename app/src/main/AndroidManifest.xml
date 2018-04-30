@@ -54,7 +54,8 @@
 
         <activity android:name=".TradeDirectory.SearchItemListActivity" />
         <activity android:name=".SearchDirectory.SearchItemActivity" />
-        <activity android:name=".ClubDirectory.ClubAnnouncementActivity"></activity>
+        <activity android:name=".ClubDirectory.ClubAnnouncementActivity" />
+        <activity android:name="com.example.allea.studentbazaar.PaymentDirectory.PaymentActivity"></activity>
     </application>
 
 </manifest>

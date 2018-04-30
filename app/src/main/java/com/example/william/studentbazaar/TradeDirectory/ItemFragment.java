@@ -18,6 +18,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.allea.studentbazaar.PaymentDirectory.PaymentActivity;
 import com.example.william.studentbazaar.ClubDirectory.CreateClubActivity;
 import com.example.william.studentbazaar.R;
 import com.example.william.studentbazaar.TradeDirectory.Item;
@@ -41,6 +42,7 @@ public class ItemFragment extends Fragment {
     private File mPhotoFile;
     private ImageView mPhotoView;
 
+    private Button mBuyButton;
     private Button mContactButton;
     private Button mBackButton;
 
@@ -83,6 +85,19 @@ public class ItemFragment extends Fragment {
 
         mPhotoView = v.findViewById(R.id.item_display_photo);
         updatePhotoView();
+
+
+
+        mBuyButton = v.findViewById(R.id.buy_button);
+        if(!mItem.getDescription().contains("Price: $")){
+            mBuyButton.setEnabled(false);
+        }
+        mBuyButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), PaymentActivity.class));
+            }
+        });
 
         mContactButton = v.findViewById(R.id.contact_seller_button);
         mContactButton.setOnClickListener(new View.OnClickListener() {

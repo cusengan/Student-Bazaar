@@ -27,7 +27,7 @@ public class Payment {
         return mName;
     }
 
-    public String setName(String name){
+    public void setName(String name){
        mName = name;
     }
 
@@ -35,7 +35,7 @@ public class Payment {
         return mExpiry;
     }
 
-    public String setExpiry(String expiry) {
+    public void setExpiry(String expiry) {
         mExpiry = expiry;
     }
 
@@ -43,7 +43,7 @@ public class Payment {
         return mNumber;
     }
 
-    public String setNumber(String number) {
+    public void setNumber(String number) {
         mNumber = number;
     }
 
@@ -51,7 +51,7 @@ public class Payment {
         return mSecurity;
     }
 
-    public String setSecurity(String security){
+    public void setSecurity(String security){
         mSecurity = security;
     }
 
