@@ -74,10 +74,14 @@
         android:background="@drawable/buttondefault"
         android:backgroundTint="@color/colorPrimary"
 <<<<<<< HEAD
+<<<<<<< HEAD
         android:text="Trade Items"
 =======
         android:text="List all items"
 >>>>>>> 87480c0f75a109b9bd1bad846b95d149b9377adc
+=======
+        android:text="Trade Items"
+>>>>>>> aee86259fc0365e8ab7177401818a5c2823cb606
         android:textColor="@color/colorWhite"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
