@@ -9,6 +9,7 @@ import android.util.Log;
 import com.example.william.studentbazaar.database.StudentBazaarDbSchema.ClubTable;
 import com.example.william.studentbazaar.database.StudentBazaarDbSchema.UserTable;
 import com.example.william.studentbazaar.database.StudentBazaarDbSchema.ItemTable;
+import com.example.william.studentbazaar.database.StudentBazaarDbSchema.InClubTable;
 
 public class DBHelper extends SQLiteOpenHelper {
     private static final int VERSION = 1;
@@ -46,6 +47,14 @@ public class DBHelper extends SQLiteOpenHelper {
                 ItemTable.Cols.DESCRIPTION + " TEXT NOT NULL, " +
                 ItemTable.Cols.ONSALE +
                 ", PRIMARY KEY (" + ItemTable.Cols.OWNERID + ", " + ItemTable.Cols.NAME + ")" +
+                ")"
+        );
+
+        db.execSQL("create table " + InClubTable.NAME + "(" +
+                InClubTable.Cols.UUID + ", " +
+                InClubTable.Cols.CLUBID + " TEXT NOT NULL, " +
+                InClubTable.Cols.STUDENTID + " INTEGER NOT NULL" +
+                ", PRIMARY KEY (" + InClubTable.Cols.CLUBID + ", " + InClubTable.Cols.STUDENTID + ")" +
                 ")"
         );
         
