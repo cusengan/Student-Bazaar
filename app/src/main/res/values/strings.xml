@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">University Bazaar System</string>
     <string name="title_activity_create_club">CreateClubActivity</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

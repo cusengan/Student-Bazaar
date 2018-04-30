@@ -73,7 +73,11 @@
         android:layout_marginTop="8dp"
         android:background="@drawable/buttondefault"
         android:backgroundTint="@color/colorPrimary"
+<<<<<<< HEAD
         android:text="Trade Items"
+=======
+        android:text="List all items"
+>>>>>>> 87480c0f75a109b9bd1bad846b95d149b9377adc
         android:textColor="@color/colorWhite"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"

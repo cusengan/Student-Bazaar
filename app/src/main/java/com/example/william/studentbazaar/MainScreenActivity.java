@@ -48,7 +48,7 @@ public class MainScreenActivity extends AppCompatActivity  {
             }
         });
 
-        mSearchItemsButton = findViewById(R.id.search);
+//        mSearchItemsButton = findViewById(R.id.search);
 
         mSearchItemsButton.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -47,4 +47,15 @@ public class StudentBazaarDbSchema {
         }
     }
 
+    public static final class EventTable {
+        public static final String NAME = "event";
+        public static final class Cols {
+            public static final String UUID = "uuid";
+            public static final String OWNERID = "ownerId";
+            public static final String NAME = "name";
+            public static final String DESCRIPTION = "description";
+            public static final String ONDISPLAY = "display";
+        }
+    }
+
 }

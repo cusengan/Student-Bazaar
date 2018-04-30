@@ -16,7 +16,7 @@ import java.util.UUID;
 
 public class ClubPagerActivity extends AppCompatActivity {
 
-    private static final String EXTRA_CRIME_ID =
+    private static final String EXTRA_CLUB_ID =
             "com.example.william.studentbazaar.club_id";
 
     private ViewPager mViewPager;
@@ -24,7 +24,7 @@ public class ClubPagerActivity extends AppCompatActivity {
 
     public static Intent newIntent(Context packageContext, UUID clubId) {
         Intent intent = new Intent(packageContext, ClubPagerActivity.class);
-        intent.putExtra(EXTRA_CRIME_ID, clubId);
+        intent.putExtra(EXTRA_CLUB_ID, clubId);
         return intent;
     }
 
@@ -34,7 +34,7 @@ public class ClubPagerActivity extends AppCompatActivity {
         setContentView(R.layout.activity_club_pager);
 
         UUID crimeId = (UUID) getIntent()
-                .getSerializableExtra(EXTRA_CRIME_ID);
+                .getSerializableExtra(EXTRA_CLUB_ID);
 
         mViewPager = findViewById(R.id.club_view_pager);
 
