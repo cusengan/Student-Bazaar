@@ -159,10 +159,16 @@ public class RegisterActivity extends AppCompatActivity {
         mSubmitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                if (mClubTitle.getText().toString().equals("")) { //check error
-//                    Toast.makeText(CreateClubActivity.this, "Please enter a valid club name" ,Toast.LENGTH_SHORT).show();
-//                    return;
-//                }
+                if (email.equals("") || firstName.equals("") || lastName.equals("") || studentId.equals("") || phoneNumber.equals("")
+                        || password.equals("")) { //check error
+                    Toast.makeText(RegisterActivity.this, "Invalid information" ,Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                if (password.length() < 8) { //check error
+                    Toast.makeText(RegisterActivity.this, "Password must be at least 8 characters" ,Toast.LENGTH_SHORT).show();
+                    return;
+                }
 
                 User user = new User();
                 user.setEmail(email);
@@ -172,12 +178,7 @@ public class RegisterActivity extends AppCompatActivity {
                 user.setPhoneNumber(phoneNumber);
                 user.setPassword(password);
                 UserLab.get(RegisterActivity.this).addUser(user);
-//                User queryUser = UserLab.get(RegisterActivity.this).getUser(studentId, password);
-//                if(queryUser == null){
-//                    Log.d("testing" ,"null user");
-//                }else{
-//                    Log.d("testing", "works");
-//                }
+
                 Global.currentUser = user;
 
                 Toast.makeText(RegisterActivity.this, "User created", Toast.LENGTH_SHORT).show();
