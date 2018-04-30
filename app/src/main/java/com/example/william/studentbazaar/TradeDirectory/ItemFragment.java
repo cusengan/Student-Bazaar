@@ -60,7 +60,6 @@ public class ItemFragment extends Fragment {
         super.onCreate(savedInstanceState);
         UUID itemId = (UUID) getArguments().getSerializable(ARG_ITEM_ID);
         mItem = ItemLab.get(getActivity()).getItem(itemId);
-        Log.d("file", mItem.getPhotoFilename());
         mPhotoFile = ItemLab.get(getActivity()).getPhotoFile(mItem);
 
     }

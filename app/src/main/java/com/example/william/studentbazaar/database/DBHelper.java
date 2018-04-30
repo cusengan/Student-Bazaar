@@ -10,6 +10,7 @@ import com.example.william.studentbazaar.database.StudentBazaarDbSchema.ClubTabl
 import com.example.william.studentbazaar.database.StudentBazaarDbSchema.UserTable;
 import com.example.william.studentbazaar.database.StudentBazaarDbSchema.ItemTable;
 import com.example.william.studentbazaar.database.StudentBazaarDbSchema.InClubTable;
+import com.example.william.studentbazaar.database.StudentBazaarDbSchema.EventTable;
 
 public class DBHelper extends SQLiteOpenHelper {
     private static final int VERSION = 1;
@@ -55,6 +56,16 @@ public class DBHelper extends SQLiteOpenHelper {
                 InClubTable.Cols.CLUBID + " TEXT NOT NULL, " +
                 InClubTable.Cols.STUDENTID + " INTEGER NOT NULL" +
                 ", PRIMARY KEY (" + InClubTable.Cols.CLUBID + ", " + InClubTable.Cols.STUDENTID + ")" +
+                ")"
+        );
+
+        db.execSQL("create table " + EventTable.NAME + "(" +
+                EventTable.Cols.UUID + " TEXT NOT NULL, " +
+                EventTable.Cols.OWNERID + " INTEGER NOT NULL, " +
+                EventTable.Cols.NAME + " TEXT NOT NULL, " +
+                EventTable.Cols.DESCRIPTION + " TEXT NOT NULL, " +
+                EventTable.Cols.ONDISPLAY +
+                ", PRIMARY KEY (" + EventTable.Cols.OWNERID + ", " + EventTable.Cols.NAME + ")" +
                 ")"
         );
         
