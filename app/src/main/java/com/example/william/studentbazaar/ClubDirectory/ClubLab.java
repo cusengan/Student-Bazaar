@@ -6,8 +6,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 
-import com.example.william.studentbazaar.database.ClubHelper;
-import com.example.william.studentbazaar.database.ClubCursorWrapper;
+import com.example.william.studentbazaar.database.DBHelper;
+import com.example.william.studentbazaar.database.Club.ClubCursorWrapper;
 import com.example.william.studentbazaar.database.StudentBazaarDbSchema.ClubTable;
 import static com.example.william.studentbazaar.database.StudentBazaarDbSchema.ClubTable.Cols.*;
 
@@ -24,6 +24,7 @@ public class ClubLab {
     public static ClubLab get(Context context) {
         if (sClubLab == null) {
             sClubLab = new ClubLab(context);
+//            context.deleteDatabase("studentBazaar.db");
         }
 
         return sClubLab;
@@ -31,7 +32,7 @@ public class ClubLab {
 
     private ClubLab(Context context) {
         mContext = context.getApplicationContext();
-        mDatabase = new ClubHelper(mContext)
+        mDatabase = new DBHelper(mContext)
                 .getWritableDatabase();
 
     }
@@ -43,7 +44,7 @@ public class ClubLab {
 
     public List<Club> getClubs() {
         List<Club> clubs = new ArrayList<>();
-        ClubCursorWrapper cursor = queryCrimes(null, null);
+        ClubCursorWrapper cursor = queryClubs(null, null);
         try {
             cursor.moveToFirst();
             while (!cursor.isAfterLast()) {
@@ -57,7 +58,7 @@ public class ClubLab {
     }
 
     public Club getClub(UUID id) {
-        ClubCursorWrapper cursor = queryCrimes(
+        ClubCursorWrapper cursor = queryClubs(
                 ClubTable.Cols.UUID + " = ?",
                 new String[]{id.toString()}
         );
@@ -73,7 +74,7 @@ public class ClubLab {
     }
 
 
-    public void updateCrime(Club club) {
+    public void updateClub(Club club) {
         String uuidString = club.getId().toString();
         ContentValues values = getContentValues(club);
         mDatabase.update(ClubTable.NAME, values,
@@ -81,7 +82,7 @@ public class ClubLab {
                 new String[]{uuidString});
     }
 
-    private ClubCursorWrapper queryCrimes(String whereClause, String[] whereArgs) {
+    private ClubCursorWrapper queryClubs(String whereClause, String[] whereArgs) {
         Cursor cursor = mDatabase.query(
                 ClubTable.NAME,
                 null, // Columns - null selects all columns

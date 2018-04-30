@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_first_time_login"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:orientation="vertical"
+            android:weightSum="1"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Enter UTA Email"
+                android:gravity="center_horizontal"
+                android:textColor="@color/colorPrimary"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:layout_weight="0.17" />
+
+            <EditText
+                android:id="@+id/email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:padding="4pt"
+                android:hint="abc@mavs.uta.edu"
+                android:gravity="center_horizontal"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:text="Student Information"
+                android:gravity="center_horizontal"
+                android:textColor="@color/colorPrimary"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="20pt"
+                android:orientation="horizontal"
+                android:weightSum="1"
+                android:layout_margin="5pt">
+
+                <TextView
+                    android:layout_width="110dp"
+                    android:layout_height="40dp"
+                    android:textSize="7pt"
+                    android:text="First Name:"
+                    android:textColor="@color/colorPrimary"
+                    android:textStyle="bold"
+                    android:padding="3pt"
+                    android:id="@+id/textView"
+                    android:layout_weight="0.51" />
+
+                <EditText
+                    android:id="@+id/firstName"
+                    android:gravity="left"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:hint = "Enter First Name"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="20pt"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="110dp"
+                    android:layout_height="40dp"
+                    android:textSize="7pt"
+                    android:text="Last Name:"
+                    android:textColor="@color/colorPrimary"
+                    android:textStyle="bold"
+                    android:padding="3pt"
+                    android:id="@+id/viewlast"
+                    android:layout_weight="0.51" />
+
+                <EditText
+                    android:id="@+id/lastName"
+                    android:gravity="left"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:hint = "Enter The Last Name"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="20pt"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="110dp"
+                    android:layout_height="40dp"
+                    android:textSize="7pt"
+                    android:text="Student ID:"
+                    android:textColor="@color/colorPrimary"
+                    android:textStyle="bold"
+                    android:padding="3pt"
+                    android:layout_weight="0.51" />
+
+                <EditText
+                    android:id="@+id/studentId"
+                    android:gravity="left"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:hint = "1001..."
+                    android:ems="10"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="20pt"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="110dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="left"
+                    android:textSize="7pt"
+                    android:text="Phone No:"
+                    android:textColor="@color/colorPrimary"
+                    android:textStyle="bold"
+                    android:padding="3pt"
+                    android:layout_weight="0.51" />
+
+                <EditText
+                    android:id="@+id/phoneNumber"
+                    android:gravity="left"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:hint = "Enter Phone #"
+                    android:ems="10"
+                    android:inputType="phone" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="20pt"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="110dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="left"
+                    android:textSize="7pt"
+                    android:text="Password:"
+                    android:textColor="@color/colorPrimary"
+                    android:textStyle="bold"
+                    android:padding="3pt"
+                    android:layout_weight="0.51" />
+
+                <EditText
+                    android:id="@+id/password"
+                    android:gravity="left"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:hint = "Enter Password"
+                    android:ems="10"
+                    android:inputType="textPassword" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/submit_register"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity ="center_horizontal"
+                android:layout_marginTop="1pt"
+                android:layout_marginBottom="5pt"
+                android:background="@drawable/buttondefault"
+                android:text="SUBMIT"
+                android:textSize="8pt"
+                android:textColor="@color/colorHomeButtonTextColor"
+                android:textStyle="bold" />
+            <Button
+                android:id="@+id/cancel_register"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/buttondefault"
+                android:text="CANCEL"
+                android:textSize="8pt"
+                android:textColor="@color/colorHomeButtonTextColor"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

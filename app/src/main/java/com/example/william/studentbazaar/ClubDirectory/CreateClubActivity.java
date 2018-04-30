@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.william.studentbazaar.Global;
 import com.example.william.studentbazaar.R;
 
 public class CreateClubActivity extends AppCompatActivity {
@@ -78,11 +79,8 @@ public class CreateClubActivity extends AppCompatActivity {
                 club.setName(clubTitle);
                 club.setDescription(clubDescription);
                 ClubLab.get(CreateClubActivity.this).addClub(club);
-
                 Toast.makeText(CreateClubActivity.this, "Club created", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(CreateClubActivity.this, ClubListActivity.class));
-
-
+                finish();
             }
         });
     }

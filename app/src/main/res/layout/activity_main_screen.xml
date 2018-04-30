@@ -21,6 +21,11 @@
             android:background="@color/colorWhite"
             android:orientation="vertical">
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/displayUserInfo"/>
+
             <ImageView
                 android:id="@+id/bazaar"
                 android:layout_width="wrap_content"
@@ -63,7 +68,7 @@
                 android:textStyle="bold" />
 
             <Button
-                android:id="@+id/bst_button"
+                android:id="@+id/item_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/buttondefault"
