@@ -50,13 +50,13 @@ public class MainScreenActivity extends AppCompatActivity  {
 
 //        mSearchItemsButton = findViewById(R.id.search);
 
-        mSearchItemsButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainScreenActivity.this, SearchMainActivity.class);
-                startActivity(intent);
-            }
-        });
+//        mSearchItemsButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(MainScreenActivity.this, SearchMainActivity.class);
+//                startActivity(intent);
+//            }
+//        });
 
         mBuySellTrade = findViewById(R.id.item_button);
 
