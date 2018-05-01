@@ -66,6 +66,16 @@
                 android:textSize="8pt"
                 android:textStyle="bold" />
 
+            <Button
+                android:id="@+id/logout_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/buttondefault"
+                android:text="LOGOUT"
+                android:textColor="@color/colorHomeTextViewColor"
+                android:textSize="8pt"
+                android:textStyle="bold" />
+
         </LinearLayout>
     </LinearLayout>
 </RelativeLayout>
