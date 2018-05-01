@@ -8,7 +8,7 @@
 
     <TextView
         android:id="@+id/item_info_text_view"
-        android:layout_width="0dp"
+        android:layout_width="272dp"
         android:layout_height="49dp"
         android:layout_marginBottom="438dp"
         android:layout_marginEnd="45dp"
@@ -30,22 +30,26 @@
         android:id="@+id/name_text_view"
         android:layout_width="64dp"
         android:layout_height="30dp"
+        android:layout_marginBottom="8dp"
         android:layout_marginEnd="293dp"
         android:layout_marginStart="24dp"
+        android:layout_marginTop="29dp"
         android:text="Name:"
         android:textColor="@android:color/black"
         android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="@+id/item_name_edit_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/item_info_text_view"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/description_text_view"
         android:layout_width="119dp"
         android:layout_height="30dp"
         android:layout_marginBottom="12dp"
-        android:layout_marginEnd="243dp"
+        android:layout_marginEnd="241dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="29dp"
         android:text="Description:"
@@ -55,15 +59,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/item_name_edit_text" />
+        app:layout_constraintTop_toBottomOf="@+id/item_name_edit_text"
+        app:layout_constraintVertical_chainStyle="packed" />
 
     <EditText
         android:id="@+id/item_name_edit_text"
-        android:layout_width="wrap_content"
+        android:layout_width="260dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="36dp"
         android:layout_marginEnd="32dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="8dp"
         android:ems="10"
         android:inputType="textCapSentences"
         android:textSize="22sp"
@@ -75,7 +81,7 @@
 
     <EditText
         android:id="@+id/item_description_edit_text"
-        android:layout_width="329dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="228dp"
         android:layout_marginEnd="32dp"
@@ -97,21 +103,24 @@
         android:layout_marginBottom="12dp"
         android:layout_marginEnd="99dp"
         android:layout_marginStart="98dp"
+        android:layout_marginTop="1dp"
         android:background="@android:color/darker_gray"
         android:cropToPadding="true"
         android:scaleType="centerInside"
         app:layout_constraintBottom_toTopOf="@+id/item_submit_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/item_camera" />
 
     <ImageButton
         android:id="@+id/item_camera"
         android:layout_width="195dp"
         android:layout_height="34dp"
+        android:layout_marginBottom="1dp"
         android:layout_marginEnd="94dp"
         android:layout_marginStart="95dp"
-        android:layout_marginTop="11dp"
+        android:layout_marginTop="16dp"
         android:src="@android:drawable/ic_menu_camera"
         app:layout_constraintBottom_toTopOf="@+id/item_photo"
         app:layout_constraintEnd_toEndOf="parent"
