@@ -11,9 +11,10 @@
         android:id="@+id/bazaar"
         android:layout_width="203dp"
         android:layout_height="163dp"
-        android:layout_marginBottom="11dp"
+        android:layout_marginBottom="12dp"
         android:layout_marginStart="91dp"
         android:layout_marginTop="16dp"
+        android:contentDescription="TODO"
         app:layout_constraintBottom_toTopOf="@+id/item_register_button"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -24,56 +25,72 @@
         android:layout_width="320dp"
         android:layout_height="77dp"
         android:layout_marginBottom="8dp"
+        android:layout_marginEnd="32dp"
         android:layout_marginStart="32dp"
+        android:layout_marginTop="12dp"
         android:background="@drawable/buttondefault"
         android:backgroundTint="@color/colorPrimary"
         android:text="Register Item for Trade"
         android:textColor="@color/colorWhite"
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/item_search_button"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bazaar" />
 
     <Button
         android:id="@+id/item_search_button"
         android:layout_width="320dp"
         android:layout_height="67dp"
         android:layout_marginBottom="8dp"
+        android:layout_marginEnd="32dp"
         android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
         android:background="@drawable/buttondefault"
         android:backgroundTint="@color/colorPrimary"
         android:text="Search Items"
         android:textColor="@color/colorWhite"
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/item_trade_button"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/item_register_button" />
 
     <Button
         android:id="@+id/item_trade_button"
         android:layout_width="320dp"
         android:layout_height="67dp"
         android:layout_marginBottom="8dp"
+        android:layout_marginEnd="32dp"
         android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
         android:background="@drawable/buttondefault"
         android:backgroundTint="@color/colorPrimary"
         android:text="Trade Items"
         android:textColor="@color/colorWhite"
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/user_item_button"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/item_search_button" />
 
     <Button
         android:id="@+id/user_item_button"
         android:layout_width="320dp"
         android:layout_height="67dp"
         android:layout_marginBottom="16dp"
+        android:layout_marginEnd="32dp"
         android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
         android:background="@drawable/buttondefault"
         android:backgroundTint="@color/colorHomeTextViewColor"
         android:text="View My Items"
         android:textColor="@color/colorWhite"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/guideline13" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline8"
