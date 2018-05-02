@@ -175,10 +175,16 @@ public class RegisterActivity extends AppCompatActivity {
                     return;
                 }
 
+                if(!isValidPassword(password)){
+                    Toast.makeText(RegisterActivity.this, "Password must contain an uppercase letter, a lowercase letter, and a number" ,Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
                 if (phoneNumber.length() != 10) { //check error
                     Toast.makeText(RegisterActivity.this, "Invalid phone number" ,Toast.LENGTH_SHORT).show();
                     return;
                 }
+
 
                 User user = new User();
                 user.setEmail(email);
@@ -204,5 +210,26 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    private boolean isValidPassword(String pass){
+        boolean capitalFlag = false;
+        boolean lowerCaseFlag = false;
+        boolean numberFlag = false;
+
+        for(int i=0;i < pass.length();i++) {
+            char c = pass.charAt(i);
+            if( Character.isDigit(c)) {
+                numberFlag = true;
+            }
+            else if (Character.isUpperCase(c)) {
+                capitalFlag = true;
+            } else if (Character.isLowerCase(c)) {
+                lowerCaseFlag = true;
+            }
+            if(numberFlag && capitalFlag && lowerCaseFlag)
+                return true;
+        }
+        return false;
     }
 }
