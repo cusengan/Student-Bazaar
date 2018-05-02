@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.william.studentbazaar.User.User;
@@ -24,11 +25,15 @@ public class LoginActivity extends AppCompatActivity {
 
     private String studentId;
     private String password;
+    private TextView mAttemptsTextView;
+    private int attemptsLeft;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        attemptsLeft = 3;
 
         mStudentId = findViewById(R.id.studentId_login);
         mStudentId.addTextChangedListener(new TextWatcher() {
@@ -72,6 +77,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (mStudentId.getText().toString().equals("") || mPassword.getText().toString().equals("")) { //check error
                     Toast.makeText(LoginActivity.this, "Please enter a valid ID and password" ,Toast.LENGTH_SHORT).show();
+                    lowerAttempts();
                     return;
                 }
 
@@ -82,6 +88,7 @@ public class LoginActivity extends AppCompatActivity {
                     startActivity(new Intent(LoginActivity.this, MainScreenActivity.class));
                 }else{
                     Toast.makeText(LoginActivity.this, "Invalid ID/Password combination", Toast.LENGTH_SHORT).show();
+                    lowerAttempts();
                 }
 
             }
@@ -94,5 +101,20 @@ public class LoginActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+        mAttemptsTextView = findViewById(R.id.attempts_text_view);
+
+        mAttemptsTextView.setText("Attempts left: " + attemptsLeft);
+
+    }
+
+    private void lowerAttempts(){
+        if(attemptsLeft == 0){
+            mSubmitButton.setEnabled(false);
+            return;
+        }
+        mAttemptsTextView.setText("Attempts left: " + --attemptsLeft);
+
+
     }
 }

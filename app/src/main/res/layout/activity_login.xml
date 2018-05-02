@@ -106,6 +106,20 @@
                 android:textSize="8pt"
                 android:textColor="@color/colorHomeButtonTextColor"
                 android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/attempts_text_view"
+                android:layout_width="168dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="0.51"
+                android:padding="3pt"
+                android:text="Attempts left:"
+                android:textColor="@color/colorPrimary"
+                android:textSize="7pt"
+                android:textStyle="bold" />
         </LinearLayout>
+
+
     </LinearLayout>
 </RelativeLayout>
