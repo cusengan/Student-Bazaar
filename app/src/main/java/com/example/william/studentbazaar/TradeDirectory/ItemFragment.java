@@ -94,7 +94,9 @@ public class ItemFragment extends Fragment {
         mBuyButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getActivity(), PaymentActivity.class));
+                Intent intent = new Intent(getActivity(), PaymentActivity.class);
+                intent.putExtra("itemId", mItem.getId().toString());
+                startActivity(intent);
             }
         });
 

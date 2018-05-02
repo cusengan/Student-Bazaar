@@ -54,7 +54,7 @@
         android:layout_marginStart="16dp"
         android:ems="10"
         android:inputType="date"
-        android:text="MM/YY"
+        android:hint="MM/YYYY"
         android:textColor="@android:color/darker_gray"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

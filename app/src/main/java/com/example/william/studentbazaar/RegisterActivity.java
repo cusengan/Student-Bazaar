@@ -165,8 +165,18 @@ public class RegisterActivity extends AppCompatActivity {
                     return;
                 }
 
-                if (password.length() < 8) { //check error
+                if(studentId.length() < 10){
+                    Toast.makeText(RegisterActivity.this, "Invalid student id" ,Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                if (password.length() < 8) {
                     Toast.makeText(RegisterActivity.this, "Password must be at least 8 characters" ,Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                if (phoneNumber.length() != 10) { //check error
+                    Toast.makeText(RegisterActivity.this, "Invalid phone number" ,Toast.LENGTH_SHORT).show();
                     return;
                 }
 

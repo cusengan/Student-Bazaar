@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -67,7 +68,7 @@ public class EventFragment extends Fragment {
         mEventCreator.setText(creator.getFullName());
 
         mEventDisplayButton = v.findViewById(R.id.set_event_display_button);
-        if(Global.currentUser.getStudentId() != mEvent.getOwnerId()){
+        if(!Global.currentUser.getStudentId().equals(mEvent.getOwnerId())){
             mEventDisplayButton.setEnabled(false);
         }
         setDisplayButtonText();
@@ -96,8 +97,10 @@ public class EventFragment extends Fragment {
     private void setDisplayButtonText(){
         if(mEvent.onDisplay()){
             mEventDisplayButton.setText("Click to turn off displaying of this event");
+            Toast.makeText(getActivity(), "Event is no longer being displayed", Toast.LENGTH_SHORT).show();
         }else{
             mEventDisplayButton.setText("Click to turn on displaying of this event");
+            Toast.makeText(getActivity(), "Event is being displayed", Toast.LENGTH_SHORT).show();
         }
     }
 }

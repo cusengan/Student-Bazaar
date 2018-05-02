@@ -26,6 +26,7 @@ public class MainScreenActivity extends AppCompatActivity  {
     private Button mSearchItems;
     private Button mBuySellTrade;
     private ImageView mImageView;
+    private Button mLogoutButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,6 +67,15 @@ public class MainScreenActivity extends AppCompatActivity  {
             public void onClick(View v) {
                 Intent intent= new Intent(MainScreenActivity.this, TradeMainActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        mLogoutButton = findViewById(R.id.logout_button);
+        mLogoutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Global.currentUser = null;
+                finish();
             }
         });
 

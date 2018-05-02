@@ -15,6 +15,7 @@ public class EventMainActivity extends AppCompatActivity {
 
     private Button mGetEvents;
     private Button mCreateEvents;
+    private Button mBackButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +39,14 @@ public class EventMainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent= new Intent(EventMainActivity.this, CreateEventActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        mBackButton = findViewById(R.id.event_main_back_button);
+        mBackButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
             }
         });
     }
