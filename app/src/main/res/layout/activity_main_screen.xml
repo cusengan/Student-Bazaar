@@ -14,7 +14,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="416dp"
+            android:layout_height="470dp"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
@@ -46,16 +46,6 @@
                 android:textStyle="bold" />
 
             <Button
-                android:id="@+id/item_button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/buttondefault"
-                android:text="Buy-Sell-Trade"
-                android:textColor="@color/colorHomeTextViewColor"
-                android:textSize="8pt"
-                android:textStyle="bold" />
-
-            <Button
                 android:id="@+id/event_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -66,6 +56,27 @@
                 android:textSize="8pt"
                 android:textStyle="bold" />
 
+            <Button
+                android:id="@+id/item_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/buttondefault"
+                android:text="Buy-Sell-Trade"
+                android:textColor="@color/colorHomeTextViewColor"
+                android:textSize="8pt"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/logout_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/buttondefault"
+                android:text="LOGOUT"
+                android:textColor="@color/colorHomeTextViewColor"
+                android:textSize="8pt"
+                android:textStyle="bold" />
+
         </LinearLayout>
+
     </LinearLayout>
 </RelativeLayout>
