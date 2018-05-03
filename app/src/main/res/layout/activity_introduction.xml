@@ -12,7 +12,7 @@
         android:layout_height="61dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="86dp"
+        android:layout_marginBottom="92dp"
         android:background="@drawable/buttondefault"
         android:text="Login"
         android:textColor="@color/colorHomeTextViewColor"
