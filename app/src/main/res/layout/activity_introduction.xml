@@ -9,10 +9,10 @@
     <Button
         android:id="@+id/login_button"
         android:layout_width="333dp"
-        android:layout_height="wrap_content"
+        android:layout_height="61dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="79dp"
+        android:layout_marginBottom="92dp"
         android:background="@drawable/buttondefault"
         android:text="Login"
         android:textColor="@color/colorHomeTextViewColor"
@@ -22,7 +22,7 @@
     <Button
         android:id="@+id/register_button"
         android:layout_width="333dp"
-        android:layout_height="wrap_content"
+        android:layout_height="61dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="20dp"
@@ -44,11 +44,11 @@
 
     <TextView
         android:id="@+id/welcome_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="81dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="181dp"
+        android:layout_marginBottom="187dp"
         android:text="Welcome to the University Bazaar Market!"
         android:textAlignment="center"
         android:textColor="@color/colorHomeTextViewColor"
