@@ -109,11 +109,11 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void lowerAttempts(){
+        mAttemptsTextView.setText("Attempts left: " + --attemptsLeft);
         if(attemptsLeft == 0){
             mSubmitButton.setEnabled(false);
             return;
         }
-        mAttemptsTextView.setText("Attempts left: " + --attemptsLeft);
 
 
     }

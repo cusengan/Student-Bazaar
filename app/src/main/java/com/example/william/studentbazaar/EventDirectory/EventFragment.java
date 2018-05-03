@@ -71,7 +71,11 @@ public class EventFragment extends Fragment {
         if(!Global.currentUser.getStudentId().equals(mEvent.getOwnerId())){
             mEventDisplayButton.setEnabled(false);
         }
-        setDisplayButtonText();
+        if(mEvent.onDisplay()){
+            mEventDisplayButton.setText("Click to turn off displaying of this event");
+        }else{
+            mEventDisplayButton.setText("Click to turn on displaying of this event");
+        }
         mEventDisplayButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -97,10 +101,10 @@ public class EventFragment extends Fragment {
     private void setDisplayButtonText(){
         if(mEvent.onDisplay()){
             mEventDisplayButton.setText("Click to turn off displaying of this event");
-            Toast.makeText(getActivity(), "Event is no longer being displayed", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(), "Event is being displayed", Toast.LENGTH_SHORT).show();
         }else{
             mEventDisplayButton.setText("Click to turn on displaying of this event");
-            Toast.makeText(getActivity(), "Event is being displayed", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(), "Event is no longer being displayed", Toast.LENGTH_SHORT).show();
         }
     }
 }

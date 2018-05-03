@@ -24,7 +24,6 @@ public class ClubLab {
     public static ClubLab get(Context context) {
         if (sClubLab == null) {
             sClubLab = new ClubLab(context);
-//            context.deleteDatabase("studentBazaar.db");
         }
 
         return sClubLab;
